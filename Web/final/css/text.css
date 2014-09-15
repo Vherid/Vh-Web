@@ -1,0 +1,122 @@
+/*
+  960 Grid System ~ Text CSS.
+  Learn more ~ http://960.gs/
+
+  Licensed under GPL and MIT.
+*/
+
+/* `Basic HTML
+----------------------------------------------------------------------------------------------------*/
+
+hr {
+  border: 0 solid #ccc;
+  border-top-width: 1px;
+  clear: both;
+  height: 0;
+}
+header {
+  text-align: center;
+  font-family: 'UnifrakturMaguntia', cursive;
+  font-size: 256px;
+  color: #FFFFFF;
+}
+header a:visited {
+  color: #FFFFFF;
+  text-decoration:none;
+}
+header a:link {
+  color: #FFFFFF;
+  text-decoration:none;
+}
+header p {
+  text-align: center;
+  font-family: 'Amatic SC', cursive;
+  font-size: 24px;
+  color: #FFFFFF;
+}
+header p a:link {
+  color: #ff8d2e;
+  text-decoration:none;
+}
+header p a:visited {
+  color: #ff8d2e;
+  text-decoration:none;
+}
+footer {
+  text-align: center;
+  font-family: 'UnifrakturMaguntia', cursive;
+  font-size: 200px;
+  color: #FFFFFF;
+  position: bottom;
+  top: 50px;
+}
+footer a:visited {
+  color: #FFFFFF;
+  text-decoration:none;
+}
+footer a:link {
+  color: #FFFFFF;
+  text-decoration:none;
+}
+.disc {
+  font-size: 11px;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+/* `Headings
+----------------------------------------------------------------------------------------------------*/
+
+h1 {
+  font-size: 25px;
+}
+
+h3 {
+  font-size: 21px;
+}
+
+h4 {
+  font-size: 19px;
+}
+
+h5 {
+  font-size: 17px;
+}
+
+h6 {
+  font-size: 15px;
+}
+
+/* `Spacing
+----------------------------------------------------------------------------------------------------*/
+
+ol {
+  list-style: decimal;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  display: inline;
+}
+
+p,
+dl,
+hr,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ol,
+ul,
+pre,
+table,
+address,
+fieldset,
+figure {
+  margin-bottom: 20px;
+}

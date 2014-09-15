@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Vherid/Set</title>
+		<link rel="stylesheet" type="text/css" media="all" href="css/reset.css" />
+		<link rel="stylesheet" type="text/css" media="all" href="css/text.css" />
+		<link rel="stylesheet" type="text/css" media="all" href="css/grid.css" />
+		<link rel="stylesheet" href="jq/themes/default/default.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="jq/nivo-slider.css" type="text/css" media="screen" />
+		<link href='http://fonts.googleapis.com/css?family=UnifrakturMaguntia' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Amatic+SC:700' rel='stylesheet' type='text/css'>
+
+		<script>
+            $(window).scroll(function(e){
+  				parallax();
+			});
+
+			function parallax(){
+  				var scrolled = $(window).scrollTop();
+  			$('.background').css('top',-(scrolled*0.15)+'px');
+			}
+        </script>
+	</head>
+	<body class="container_11">
+		<header class="grid_11">
+			<a href="index.html" class="htitle">vherid.set</a>
+			<p>A set of custom color schemes and tile sets for the game: <a href="http://www.bay12games.com/dwarves/features.html">Dwarf Fortress</a>, guaranteed to increase the value of your bloodshed!</p>
+		</header>
+		<section
+			<div class="slider-wrapper theme-default grid_11">
+        	    <div id="slider" class="nivoSlider">
+        	        <img src="images/pr1.png" alt="Example 000" />
+        	        <img src="images/pr2.png" alt="Example 001" />
+        	        <img src="images/pr3.png" alt="Example 002" />
+        	        <img src="images/pr4.png" alt="Example 003" />
+        	    </div>
+        	</div>
+        	<h2 class="disc">Some previews contain other tilesets, but Crazy 8x8 with Sorrow colors for example, show a great mix.</h2>
+	
+			<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    		<script type="text/javascript" src="jq/jquery.nivo.slider.js"></script>
+    		<script type="text/javascript">
+    		$(window).load(function() {
+    		    $('#slider').nivoSlider();
+    		});
+    		</script>
+    	</section>
+
+    	<section class="grid_11 damnit">
+
+			<a class="fancybox" rel="color" href="http://i.imgur.com/Vz7nhPV.png" title="Dusk Scheme"><img class="push_1 grid_3" src="images/cs1.png" alt="CS 000" /></a>
+			<a class="fancybox" rel="color" href="http://i.imgur.com/wR9l4Pd.png" title="Mishka Scheme"><img class="push_1 grid_3" src="images/cs2.png" alt="CS 001" /></a>
+			<a class="fancybox" rel="color" href="http://i.imgur.com/e8LLDqk.png" title="Dark Sand Scheme"><img class="push_1 grid_3" src="images/cs3.png" alt="CS 002" /></a>
+			<a class="fancybox" rel="color" href="http://i.imgur.com/6GbO3cb.png" title="Sorrow Scheme"><img class="push_1 grid_3" src="images/cs4.png" alt="CS 003" /></a>
+			<a class="fancybox" rel="color" href="http://i.imgur.com/Y9foEd7.png" title="Lowsat Scheme"><img class="push_1 grid_3" src="images/cs5.png" alt="CS 004" /></a>
+			<a class="fancybox" rel="color" href="http://i.imgur.com/eO5RaoZ.png" title="Default Scheme"><img class="push_1 grid_3" src="images/cs6.png" alt="CS 005" /></a>
+			<a class="fancybox" rel="color" href="http://i.imgur.com/VuP6yzB.png" title="Default+ Scheme"><img class="push_1 grid_3" src="images/cs7.png" alt="CS 006" /></a>
+			<a class="fancybox" rel="color" href="http://i.imgur.com/XfE0Gu9.png" title="Natural Scheme"><img class="push_1 grid_3" src="images/cs8.png" alt="CS 007" /></a>
+			<a class="fancybox" rel="color" href="http://i.imgur.com/uAnM4uY.png" title="Warm Scheme"><img class="push_1 grid_3" src="images/cs9.png" alt="CS 008" /></a>
+			<a class="fancybox" rel="color" href="http://i.imgur.com/MqQvPzo.png" title="Toxic Scheme"><img class="push_1 grid_3" src="images/cs10.png" alt="CS 009" /></a>
+			<a class="fancybox" rel="color" href="http://i.imgur.com/RqIU4NI.png" title="Matrix Scheme"><img class="push_1 grid_3" src="images/cs11.png" alt="CS 010" /></a>
+			<a class="fancybox" rel="color" href="http://i.imgur.com/nejTeaJ.png" title="NES Scheme"><img class="push_1 grid_3" src="images/cs12.png" alt="CS 011" /></a>
+			<a class="fancybox" rel="color" href="http://i.imgur.com/5MOyCIY.png" title="Blu Scheme"><img class="push_1 grid_3" src="images/cs13.png" alt="CS 012" /></a>
+			<a class="fancybox" rel="color" href="http://i.imgur.com/OmiAwmk.png" title="Ash Scheme"><img class="push_1 grid_3" src="images/cs14.png" alt="CS 013" /></a>
+			<a class="fancybox" rel="color" href="http://i.imgur.com/7WJSKKn.png" title="Jolly Bastion Warm Scheme"><img class="push_1 grid_3" src="images/cs15.png" alt="CS 014" /></a>
+			<link rel="stylesheet" href="jq/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+			<script type="text/javascript" src="jq/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+			<script type="text/javascript">
+				$(document).ready(function() {
+					$(".fancybox").fancybox({
+						nextEffect: 'none',
+      					prevEffect: 'none'
+					});
+				});
+			</script>
+		</section>
+
+		<section class="grid_11 frank">
+			<a class="fancybox" rel="tile" href="http://i.imgur.com/V0yshx6.png" title="8x8 ASCII"><img class="push_1 grid_3" src="images/ts4.png" alt="TS 003" /></a>
+			<a class="fancybox" rel="tile" href="http://i.imgur.com/TNBp9HG.png" title="10x10 ASCII"><img class="push_1 grid_3" src="images/ts5.png" alt="TS 004" /></a>
+			<a class="fancybox" rel="tile" href="http://i.imgur.com/cJgWR9z.png" title="10x10 ASCII Ra"><img class="push_1 grid_3" src="images/ts1.png" alt="TS 000" /></a>
+			<a class="fancybox" rel="tile" href="http://i.imgur.com/hOfCMir.png" title="9x9 Vherid"><img class="push_1 grid_3" src="images/ts2.png" alt="TS 001" /></a>
+			<a class="fancybox" rel="tile" href="http://i.imgur.com/8vxSUfB.png" title="12x12 Vherid"><img class="push_1 grid_3" src="images/ts6.png" alt="TS 005" /></a>
+			<a class="fancybox" rel="tile" href="http://i.imgur.com/9H2ervs.png" title="8x12 Soviet"><img class="push_1 grid_3" src="images/ts3.png" alt="TS 002" /></a>	
+		</section>
+
+		<footer>
+			<a href="https://dl.dropboxusercontent.com/s/b09xlhumee3d4u8/VheridSet5.zip?dl=1&token_hash=AAHjuXWApo8O0aHGwkjVNaRayCrq_aLbJB8j2FVxmZ-V0g" class="htitle">Download</a>
+		</footer>
+	</body>
+</html>
