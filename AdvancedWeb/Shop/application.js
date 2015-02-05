@@ -8,15 +8,15 @@ var cart = { };
 var itemCount = 0;
 
 function addToCart (item){
-	if(!cart[item]) { cart[item] = 0; }
+	itemCount = 1;
+	if(!cart[item]) { cart[item] = itemCount; }
 }
 
 
 function swapRaceDesc(race) {
 	if(raceSelected==true) {
-		cart = { };
-		raceValue = Races[race].sPrice;
-		$("#pts").text(raceValue + " PTS");
+		cart = {};
+		itemCount = 0;
 		var desc = Races[race].description;
 		$(".racedesc").text(desc+" // Size: "+Races[race].size);
 		raceValue = Races[race].sPrice;
@@ -41,8 +41,8 @@ function showProduct(product) {
 		$("#productpts").text(productd.price+" PTS");
 		productValue = productd.price;
 		$(".purchase").click(function() {
-	    	addToCart(product);
-	    	totalCost(cart);
+			addToCart(product);
+			totalCost(cart);
 	 	});
 	}
 	else {
@@ -57,12 +57,12 @@ function subTotal() {
 function totalCost(items) {
 	var total = raceValue;
 	itemCount = 0;
-	for(var itemName in items) {
+	for(var title in items) {
 		var itemPrice = subTotal();
 		total -= itemPrice;
-		itemCount += 1;
+		itemCount = 1;
 	}
-	$("#pts").text(total+" PTS"+" // "+itemCount+" items");
+	$("#pts").text(total+" PTS"+" // "+Object.keys(cart).length+" items");
 	return total;
 }
 
@@ -70,6 +70,7 @@ function hideProduct() {
 	$(".details").hide();
 	$(".overlay").hide();
 	$("#add-to-cart").off("click");
+	productValue = 0;
 }
 
 function swapMatDesc(material) {
