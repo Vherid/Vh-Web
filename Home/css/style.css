@@ -3,12 +3,14 @@ body {
     background-color: #0D1111;
     color: #DFE9E9;
 }
-h1 {
-    font-family: 'Vollkorn';
+h1{
     font-weight: 700;
 }
 .infoH {
     margin-top: 0;
+}
+.infoD {
+    margin-bottom: 150px;
 }
 #splash {
     background-color: #FF5003;
@@ -16,15 +18,12 @@ h1 {
     padding-top: 66vh;
 }
 .splashText {
-    color: #43100B;
     text-align: center;
     font-size: 1em;
 }
-.row {
-    border-bottom: 1px solid #DFE9E9;
+.rowM {
     margin-top: 20px;
 }
-p {
-    font-family: 'Vollkorn';
-    font-weight: 400;
+.rowSep {
+    border-bottom: 1px solid #DFE9E9;
 }
