@@ -7,13 +7,24 @@ h1 {
     font-family: 'Vollkorn';
     font-weight: 700;
 }
+.infoH {
+    margin-top: 0;
+}
 #splash {
     background-color: #FF5003;
     height: 100vh;
-    padding-top: 33vh;
+    padding-top: 66vh;
 }
 .splashText {
     color: #43100B;
     text-align: center;
-    font-size: 5vw;
+    font-size: 1em;
+}
+.row {
+    border-bottom: 1px solid #DFE9E9;
+    margin-top: 20px;
+}
+p {
+    font-family: 'Vollkorn';
+    font-weight: 400;
 }
