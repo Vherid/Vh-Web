@@ -1,10 +1,14 @@
 body {
     margin: 0px auto;
-    background-color: #EEEEEE;
+    background-color: #0D1111;
+    color: #DFE9E9;
 }
-h1 {
+/*h1 {
     font-family: 'Vollkorn';
     font-weight: 700;
     font-size: 72px;
-    color: #111111;
+}*/
+#splash {
+    background-color: #FF5003;
+    height: 100vh;
 }
