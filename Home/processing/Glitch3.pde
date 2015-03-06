@@ -10,10 +10,7 @@ void setup() {
 }
 
 void draw() {
-  glitchdraw()
-}
-
-void glitchdraw(){
+  // image(img, 0, 0);
   img.loadPixels();
   float rx1=random(img.width);
   int x1=int(rx1);
@@ -22,9 +19,9 @@ void glitchdraw(){
   int y1=int(ry1);
   int f1=0;
   int if1=0;
-  while(f1<40)
+  while(f1<80)
   {
-    for(int f2=0;f2<90;f2++)
+    for(int f2=0;f2<60;f2++)
     {
       for(int f3=0;f3<20;f3++)
       {
@@ -46,8 +43,8 @@ void glitchdraw(){
       y1-=20;
       fill(c1);
       noStroke();
-      rect(x1,y1,x1+3,y1+3);
-      float rz1=random(0,10);
+      rect(x1,y1,x1+1,y1+1);
+      float rz1=random(0,20);
       int z1=int(rz1);
       x1=x1+z1;
     }
@@ -55,17 +52,6 @@ void glitchdraw(){
     y1=y1+10;
     f1=f1+1;
   }
-}
-
-public boolean mouseP=false;
-
-void mousePressed() {
-  if(mouseP==false) {
-    noLoop();
-    mouseP=true;
-  }
-  else {
-    loop();
-    mouseP=false;
-  }
+  filter(POSTERIZE, 10);
+  filter(INVERT);
 }

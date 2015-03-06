@@ -1,3 +1,5 @@
+import processing.video.*;
+Capture cap;
 PImage img;
 color c1;
 
@@ -6,14 +8,10 @@ void setup() {
   background(#FF5003);
   img = loadImage("image/face.png");
   img.resize(601,801);
-  frameRate(10);
+  frameRate(3000);
 }
 
 void draw() {
-  glitchdraw()
-}
-
-void glitchdraw(){
   img.loadPixels();
   float rx1=random(img.width);
   int x1=int(rx1);
@@ -24,9 +22,9 @@ void glitchdraw(){
   int if1=0;
   while(f1<40)
   {
-    for(int f2=0;f2<90;f2++)
+    for(int f2=0;f2<20;f2++)
     {
-      for(int f3=0;f3<20;f3++)
+      for(int f3=0;f3<15;f3++)
       {
         c1 = img.get(x1,y1);
         while(if1<20)
@@ -46,26 +44,14 @@ void glitchdraw(){
       y1-=20;
       fill(c1);
       noStroke();
-      rect(x1,y1,x1+3,y1+3);
-      float rz1=random(0,10);
+      triangle(x1,y1-10,x1-15,y1+15,x1+15,y1+15);
+      float rz1=random(0,200);
       int z1=int(rz1);
       x1=x1+z1;
     }
     x1=0;
-    y1=y1+10;
-    f1=f1+1;
+    y1=y1+30;
+    f1=f1+10;
   }
-}
 
-public boolean mouseP=false;
-
-void mousePressed() {
-  if(mouseP==false) {
-    noLoop();
-    mouseP=true;
-  }
-  else {
-    loop();
-    mouseP=false;
-  }
 }

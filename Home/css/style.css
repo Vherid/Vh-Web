@@ -27,3 +27,6 @@ h1{
 .rowSep {
     border-bottom: 1px solid #FF5003;
 }
+#processingCanvas {
+    cursor: pointer;
+}
