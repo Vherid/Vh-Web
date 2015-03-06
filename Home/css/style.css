@@ -15,7 +15,6 @@ h1{
 #splash {
     background-color: #FF5003;
     height: 100vh;
-    padding-top: 10vh;
 }
 .splashText {
     text-align: center;
@@ -27,6 +26,9 @@ h1{
 .rowSep {
     border-bottom: 1px solid #FF5003;
 }
-#processingCanvas {
-    cursor: pointer;
+.splashImg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
