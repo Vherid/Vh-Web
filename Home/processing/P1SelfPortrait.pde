@@ -6,6 +6,10 @@ void setup(){
   background(#FF5003);
   img = loadImage("image/face.png");
   img.resize(601,801);
+  if(mouseP==false) {
+    noLoop();
+    mouseP=true;
+  }
 }
 
 // Generating the image.

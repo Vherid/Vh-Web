@@ -7,10 +7,14 @@ void setup() {
   img = loadImage("image/face.png");
   img.resize(601,801);
   frameRate(10);
+  if(mouseP==false) {
+    noLoop();
+    mouseP=true;
+  }
 }
 
 void draw() {
-  glitchdraw()
+  glitchdraw();
 }
 
 void glitchdraw(){

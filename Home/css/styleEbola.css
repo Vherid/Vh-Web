@@ -1,0 +1,16 @@
+/*#ffc107*/
+
+body {
+    margin: 0px auto;
+    background-color: #fafafa;
+    color: #263238;
+    line-height: 1.4
+}
+.container {
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 650px;
+}
+h1 {
+    font-size: 5em;
+}

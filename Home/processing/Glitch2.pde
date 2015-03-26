@@ -9,6 +9,10 @@ void setup() {
   img = loadImage("image/face.png");
   img.resize(601,801);
   frameRate(3000);
+  if(mouseP==false) {
+    noLoop();
+    mouseP=true;
+  }
 }
 
 void draw() {
@@ -54,4 +58,17 @@ void draw() {
     f1=f1+10;
   }
 
+}
+
+public boolean mouseP=false;
+
+void mousePressed() {
+  if(mouseP==false) {
+    noLoop();
+    mouseP=true;
+  }
+  else {
+    loop();
+    mouseP=false;
+  }
 }
