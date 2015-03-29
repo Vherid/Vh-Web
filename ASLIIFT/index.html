@@ -59,7 +59,7 @@
                 <label for="axisSANNumber">Axis SAN</label>
                 <input min="2" max="7" class="form-control" id="axisSANNumber" ng-model="axisSANN" type="number" step="any" maxlength="1">
             </div>
-            <button class="btn btn-primary btn-lg" id="rollButton" ng-click="rollDie()">Roll</button>
+            <button class="btn btn-primary btn-lg" id="rollButton" ng-click="rollDie()">Roll FT</button>
         </form>
         <div class="rollResults" ng-show="rollPushed">
             <h3>Dice Rolls are: <span id="colorDie">{{dieOne}}</span>|{{dieTwo}}</h3>
@@ -86,15 +86,33 @@
                 <label for "modifierEntry">Defender's Firepower</label>
                 <input class="form-control" id="defendFP" ng-model="DFP" type="number" step="any">
             </div>
-            <button class="btn btn-primary btn-lg" id="rollButtonCC" ng-click="rollDieCC()">Roll</button>
+            <div class="form-group">
+                <label for "modifierEntry">Modifier</label>
+                <input class="form-control" id="modifierEntryCC" ng-model="CCDRM" type="number">
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" ng-model="HTHCheckBox"> <strong>HTH</strong>
+                </label>
+            </div>
+            <button class="btn btn-primary btn-lg" id="rollButtonCC" ng-click="rollDieCC()">Roll CC</button>
         </form>
         <div class="rollResults" ng-show="rollPushedCC">
             <h3>Odds are {{oddsResult}} | To Kill # is {{toKill}}</h3>
             <h3>Dice Rolls are: <span id="colorDie">{{dieOneCC}}</span>|{{dieTwoCC}}</h3>
-            <h2>Total: {{dieTotalCC}}</h2>
-            <div class="alert alert-warning" role="alert" ng-show="dieTotalCC>toKill">No Kill</div>
-            <div class="alert alert-warning" role="alert" ng-show="dieTotalCC===toKill">Partial Kill</div>
-            <div class="alert alert-danger" role="alert" ng-show="dieTotalCC<toKill">Defenders Killed!</div>
+            <h2>Total: {{dieTotalCCM}}</h2>
+            <div class="alert alert-warning" role="alert" ng-show="dieTotalCCM>toKill">No Kill</div>
+            <div class="alert alert-warning" role="alert" ng-show="dieTotalCCM===toKill">Partial Kill</div>
+            <div class="alert alert-danger" role="alert" ng-show="dieTotalCCM<toKill">Defenders Killed!</div>
+            <div class="alert alert-info" role="alert" ng-show="dieTotalCCM===2">Leader Creation Activated!</div>
+            <div class="form-group" ng-show="dieTotalCC===2">
+                <label for "modifierEntry">Modifier</label>
+                <input class="form-control" id="modifierEntryLC" ng-model="LCDRM" type="number">
+            </div>
+            <button class="btn btn-primary btn-lg" id="rollButtonLC" ng-click="rollDieLC()" ng-show="dieTotalCC===2">Roll LC</button>
+            <h3 ng-show="rollPushedLC">Die Roll is: <span id="colorDie">{{dieLC}}</h3>
+            <h2 ng-show="rollPushedLC">Total: {{totalLC}}</h2>
+            <div class="alert alert-warning" role="alert" ng-show="rollPushedLC"><strong>{{LCResult}}</strong> Leader Created!</div>
         </div>
     </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

@@ -7,12 +7,15 @@
         $scope.dieOneCC = 0;
         $scope.dieTwoCC = 0;
         $scope.dieTotalCC = 0;
+        $scope.CCDRM = 0;
+        $scope.LCDRM = 0;
 
         $scope.rollDieCC = function() {
             $scope.dieOneCC = chance.d6();
             $scope.dieTwoCC = chance.d6();
             $scope.dieTotalCC = $scope.dieOneCC + $scope.dieTwoCC;
             $scope.oddsCC = $scope.AFP / $scope.DFP;
+            $scope.dieTotalCCM = $scope.dieTotalCC + $scope.CCDRM
 
             if ($scope.oddsCC < 0.125) {
                 $scope.toKill = 0;
@@ -58,7 +61,30 @@
                 $scope.oddsResult = '13-1';
             }
 
+            if ($scope.HTHCheckBox === true) {
+                $scope.toKill += 2;
+            }
+
             $scope.rollPushedCC = true;
+        }
+
+        $scope.rollDieLC = function() {
+            $scope.dieLC = chance.d6();
+            $scope.totalLC = $scope.dieLC + $scope.LCDRM;
+
+            if ($scope.totalLC >= 7) {
+                $scope.LCResult = 'No';
+            } else if ($scope.totalLC === 6) {
+                $scope.LCResult = '6+1';
+            } else if ($scope.totalLC === 4 || $scope.totalLC === 5) {
+                $scope.LCResult = '7-0';
+            } else if ($scope.totalLC === 2 || $scope.totalLC === 3) {
+                $scope.LCResult = '8-0';
+            } else {
+                $scope.LCResult = '8-1';
+            }
+
+            $scope.rollPushedLC = true;
         }
     })
 
