@@ -35,15 +35,38 @@
                 <label for "modifierEntry">Modifier</label>
                 <input class="form-control" id="modifierEntry" ng-model="TEM" type="number">
             </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" ng-model="noCowerCheckBox"> <strong>No Cowering:</strong> Fire is from a SMC(or led FG), berserk/Fanatic unit, Fire Lane, IFE, Canister, Aircraft, British Elite/First Line unit, Finns, Sniper, ordnance, OBA, any form of vehicular fire, CC, or DC.
+                </label>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" ng-model="cowerDoubleCheckBox"> <strong>Double Cowering:</strong> Fire is from Inexperienced Personnel
+                </label>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" ng-model="activateSAN"> <strong>Check for SAN</strong>
+                </label>
+            </div>
+            <div class="form-group SANN" ng-show="activateSAN">
+                <label for="alliesSANNumber">Allies SAN</label>
+                <input min="2" max="7" class="form-control" id="alliesSANNumber" ng-model="alliesSANN" type="number" step="any" maxlength="1">
+                <label for="axisSANNumber">Axis SAN</label>
+                <input min="2" max="7" class="form-control" id="axisSANNumber" ng-model="axisSANN" type="number" step="any" maxlength="1">
+            </div>
             <button class="btn btn-primary btn-lg" id="rollButton" ng-click="rollDie()">Roll</button>
         </form>
         <div class="rollResults" ng-show="rollPushed">
             <h3>Dice Rolls are: {{dieOne}}|{{dieTwo}}</h3>
             <h2>Total: {{dieTotal}}</h2>
-            <div class="alert alert-info" role="alert" ng-show="dieOne===dieTwo">
+            <div class="alert alert-info" role="alert" ng-show="dieOne===dieTwo && noCowerCheckBox===false">
                 <p><strong>COWERING:</strong> Firepower shifts down to: {{FPTotal}}</p>
             </div>
             <div class="alert alert-warning" role="alert">{{result}}</div>
+            <div class="alert alert-danger" role="alert" ng-show="dieTotal===alliesSANN">Allies Sniper Activated</div>
+            <div class="alert alert-danger" role="alert" ng-show="dieTotal===axisSANN">Axis Sniper Activated</div>
         </div>
     </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

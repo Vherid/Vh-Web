@@ -14,3 +14,7 @@ body {
 h1 {
     font-family: 'UnifrakturCook', cursive;
 }
+
+.checkbox {
+    text-align: left;
+}
