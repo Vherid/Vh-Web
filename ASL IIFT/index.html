@@ -38,7 +38,8 @@
             <button class="btn btn-primary btn-lg" id="rollButton" ng-click="rollDie()">Roll</button>
         </form>
         <div class="rollResults" ng-show="rollPushed">
-            <h3>Dice Rolls are: {{dieOne}}|{{dieTwo}} -- Total: {{dieTotal}}</h3>
+            <h3>Dice Rolls are: {{dieOne}}|{{dieTwo}}</h3>
+            <h2>Total: {{dieTotal}}</h2>
             <div class="alert alert-info" role="alert" ng-show="dieOne===dieTwo">
                 <p><strong>COWERING:</strong> Firepower shifts down to: {{FPTotal}}</p>
             </div>

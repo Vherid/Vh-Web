@@ -18,7 +18,7 @@
             $scope.dieTotal = $scope.dieOne + $scope.dieTwo + $scope.TEM;
             var FPKeyStrength = [0, 1, 2, 4, 6, 8, 12, 16, 20, 24, 30];
 
-            // In the event of a cower, this determines what FP value the FP is dropped down to, using the Key Strength Array. If no cower, FP is still whatever number was entered.
+            // In the event of a cower, this determines what FP value the FP is dropped down to, using the Key Strength Array. If no cower, FP is still whatever number was entered. If FP is over 36, this also sets it to the 36FP Column.
             if ($scope.dieOne === $scope.dieTwo) {
                 if ($scope.FP <= 1) {
                     $scope.FPTotal = FPKeyStrength[0];
@@ -44,7 +44,11 @@
                     $scope.FPTotal = FPKeyStrength[10];
                 }
             } else {
-                $scope.FPTotal = $scope.FP;
+                if ($scope.FP > 36) {
+                    $scope.FPTotal = 36;
+                } else {
+                    $scope.FPTotal = $scope.FP;
+                }
             }
 
             // Small function to help check the $scope.result in each case statement without creating an ever increasingly large (dieTotal>0) ... (dieTotal>X) check.
@@ -402,7 +406,57 @@
                     }
                     break;
                 case 31:
-                    var iiftTableFP = ['6KIA', '5KIA', '4KIA', '3KIA', '2KIA', '1KIA', 'K/4', '4MC', '3MC', '2MC', '2MC', '1MC', '1MC', 'NMC', 'PTC', 'No Result'];
+                    var iiftTableFP = ['6KIA', '5KIA', '4KIA', '3KIA', '2KIA', '1KIA', 'K/4', '4MC', '3MC', '2MC', '2MC', '1MC', '1MC', 'NMC', 'PTC', 'CTC', 'No Result'];
+                    if (0 <= $scope.dieTotal < iiftTableFP.length) {
+                        $scope.result = iiftTableFP[0 + tableLengthResultCheck(0)];
+                    } else if ($scope.dieTotal < 0) {
+                        $scope.result = iiftTable[0];
+                    } else {
+                        $scope.result = iiftTable[iiftTableFP.length - 1];
+                    }
+                    break;
+                case 32:
+                    var iiftTableFP = ['6KIA', '5KIA', '4KIA', '3KIA', '2KIA', '1KIA', 'K/4', '4MC', '3MC', '3MC', '2MC', '2MC', '1MC', 'NMC', 'PTC', 'CTC', 'No Result'];
+                    if (0 <= $scope.dieTotal < iiftTableFP.length) {
+                        $scope.result = iiftTableFP[0 + tableLengthResultCheck(0)];
+                    } else if ($scope.dieTotal < 0) {
+                        $scope.result = iiftTable[0];
+                    } else {
+                        $scope.result = iiftTable[iiftTableFP.length - 1];
+                    }
+                    break;
+                case 33:
+                    var iiftTableFP = ['6KIA', '5KIA', '4KIA', '3KIA', '2KIA', '1KIA', 'K/4', '4MC', '4MC', '3MC', '2MC', '2MC', '1MC', 'NMC', 'NMC', 'CTC', 'No Result'];
+                    if (0 <= $scope.dieTotal < iiftTableFP.length) {
+                        $scope.result = iiftTableFP[0 + tableLengthResultCheck(0)];
+                    } else if ($scope.dieTotal < 0) {
+                        $scope.result = iiftTable[0];
+                    } else {
+                        $scope.result = iiftTable[iiftTableFP.length - 1];
+                    }
+                    break;
+                case 34:
+                    var iiftTableFP = ['6KIA', '5KIA', '4KIA', '3KIA', '2KIA', '1KIA', 'K/4', 'K/4', '4MC', '3MC', '2MC', '2MC', '1MC', '1MC', 'NMC', 'CTC', 'No Result'];
+                    if (0 <= $scope.dieTotal < iiftTableFP.length) {
+                        $scope.result = iiftTableFP[0 + tableLengthResultCheck(0)];
+                    } else if ($scope.dieTotal < 0) {
+                        $scope.result = iiftTable[0];
+                    } else {
+                        $scope.result = iiftTable[iiftTableFP.length - 1];
+                    }
+                    break;
+                case 35:
+                    var iiftTableFP = ['6KIA', '5KIA', '4KIA', '3KIA', '3KIA', '2KIA', '1KIA', 'K/4', '4MC', '3MC', '2MC', '2MC', '1MC', '1MC', 'NMC', 'CTC', 'No Result'];
+                    if (0 <= $scope.dieTotal < iiftTableFP.length) {
+                        $scope.result = iiftTableFP[0 + tableLengthResultCheck(0)];
+                    } else if ($scope.dieTotal < 0) {
+                        $scope.result = iiftTable[0];
+                    } else {
+                        $scope.result = iiftTable[iiftTableFP.length - 1];
+                    }
+                    break;
+                case 36:
+                    var iiftTableFP = ['7KIA', '6KIA', '5KIA', '4KIA', '3KIA', '2KIA', '1KIA', 'K/4', '4MC', '3MC', '2MC', '2MC', '1MC', '1MC', 'NMC', 'PTC', 'No Result'];
                     if (0 <= $scope.dieTotal < iiftTableFP.length) {
                         $scope.result = iiftTableFP[0 + tableLengthResultCheck(0)];
                     } else if ($scope.dieTotal < 0) {
