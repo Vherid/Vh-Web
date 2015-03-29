@@ -3,29 +3,37 @@ body {
     background-color: #0D1111;
     color: #DFE9E9;
 }
-h1{
+
+h1 {
     font-weight: 700;
 }
+
 .infoH {
     margin-top: 0;
 }
+
 .infoD {
     margin-bottom: 150px;
 }
+
 #splash {
     background-color: #FF5003;
     height: 100vh;
 }
+
 .splashText {
     text-align: center;
     font-size: 1em;
 }
+
 .rowM {
     margin-top: 20px;
 }
+
 .rowSep {
     border-bottom: 1px solid #FF5003;
 }
+
 .splashImg {
     position: absolute;
     top: 50%;
