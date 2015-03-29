@@ -12,61 +12,48 @@
             $scope.dieOneCC = chance.d6();
             $scope.dieTwoCC = chance.d6();
             $scope.dieTotalCC = $scope.dieOneCC + $scope.dieTwoCC;
-            $scope.oddsCC = $scope.AFP/$scope.DFP;
+            $scope.oddsCC = $scope.AFP / $scope.DFP;
 
-            if($scope.oddsCC < 0.125) {
+            if ($scope.oddsCC < 0.125) {
                 $scope.toKill = 0;
                 $scope.oddsResult = '<1-8';
-            }
-            else if ($scope.oddsCC >= 0.125 && $scope.oddsCC < 0.167) {
+            } else if ($scope.oddsCC >= 0.125 && $scope.oddsCC < 0.167) {
                 $scope.toKill = 1;
                 $scope.oddsResult = '1-8';
-            }
-            else if ($scope.oddsCC >= 0.167 && $scope.oddsCC < 0.25) {
+            } else if ($scope.oddsCC >= 0.167 && $scope.oddsCC < 0.25) {
                 $scope.toKill = 2;
                 $scope.oddsResult = '1-6';
-            }
-            else if ($scope.oddsCC >= 0.25 && $scope.oddsCC < 0.50) {
+            } else if ($scope.oddsCC >= 0.25 && $scope.oddsCC < 0.50) {
                 $scope.toKill = 3;
                 $scope.oddsResult = '1-4';
-            }
-            else if ($scope.oddsCC >= 0.50 && $scope.oddsCC < 1) {
+            } else if ($scope.oddsCC >= 0.50 && $scope.oddsCC < 1) {
                 $scope.toKill = 4;
                 $scope.oddsResult = '1-2';
-            }
-            else if ($scope.oddsCC >= 1 && $scope.oddsCC < 1.5) {
+            } else if ($scope.oddsCC >= 1 && $scope.oddsCC < 1.5) {
                 $scope.toKill = 5;
                 $scope.oddsResult = '1-1';
-            }
-            else if ($scope.oddsCC >= 1.5 && $scope.oddsCC < 2) {
+            } else if ($scope.oddsCC >= 1.5 && $scope.oddsCC < 2) {
                 $scope.toKill = 6;
                 $scope.oddsResult = '3-2';
-            }
-            else if ($scope.oddsCC >= 2 && $scope.oddsCC < 3) {
+            } else if ($scope.oddsCC >= 2 && $scope.oddsCC < 3) {
                 $scope.toKill = 7;
                 $scope.oddsResult = '2-1';
-            }
-            else if ($scope.oddsCC >= 3 && $scope.oddsCC < 4) {
+            } else if ($scope.oddsCC >= 3 && $scope.oddsCC < 4) {
                 $scope.toKill = 8;
                 $scope.oddsResult = '3-1';
-            }
-            else if ($scope.oddsCC >= 4 && $scope.oddsCC < 6) {
+            } else if ($scope.oddsCC >= 4 && $scope.oddsCC < 6) {
                 $scope.toKill = 9;
                 $scope.oddsResult = '4-1';
-            }
-            else if ($scope.oddsCC >= 6 && $scope.oddsCC < 8) {
+            } else if ($scope.oddsCC >= 6 && $scope.oddsCC < 8) {
                 $scope.toKill = 10;
                 $scope.oddsResult = '6-1';
-            }
-            else if ($scope.oddsCC >= 8 && $scope.oddsCC < 10) {
+            } else if ($scope.oddsCC >= 8 && $scope.oddsCC < 10) {
                 $scope.toKill = 11;
                 $scope.oddsResult = '8-1';
-            }
-            else if ($scope.oddsCC = 10) {
+            } else if ($scope.oddsCC = 10) {
                 $scope.toKill = 12;
                 $scope.oddsResult = '10-1';
-            }
-            else {
+            } else {
                 $scope.toKill = 13;
                 $scope.oddsResult = '13-1';
             }
