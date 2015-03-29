@@ -65,8 +65,8 @@
                 <p><strong>COWERING:</strong> Firepower shifts down to: {{FPTotal}}</p>
             </div>
             <div class="alert alert-warning" role="alert">{{result}}</div>
-            <div class="alert alert-danger" role="alert" ng-show="dieTotal===alliesSANN">Allies Sniper Activated</div>
-            <div class="alert alert-danger" role="alert" ng-show="dieTotal===axisSANN">Axis Sniper Activated</div>
+            <div class="alert alert-danger" role="alert" ng-show="dieTotal===alliesSANN && activateSAN===true">Allies Sniper Activated</div>
+            <div class="alert alert-danger" role="alert" ng-show="dieTotal===axisSANN && activateSAN===true">Axis Sniper Activated</div>
         </div>
     </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
