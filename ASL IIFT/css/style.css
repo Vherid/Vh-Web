@@ -1,0 +1,16 @@
+body {
+    text-align: center;
+}
+
+.container {
+    border: 5px solid #2c3e50;
+    width: 40%;
+    min-width: 500px;
+    margin-top: 1%;
+    background: #FFF;
+    padding-bottom: 10px;
+}
+
+h1 {
+    font-family: 'UnifrakturCook', cursive;
+}
