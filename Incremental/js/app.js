@@ -15,7 +15,7 @@
         };
 
         $scope.numHeadquartersStaff = 0;
-        $scope.costHeadquartersStaff = 5;
+        $scope.costHeadquartersStaff = 4;
         $scope.hireHeadquartersStaff = function() {
             $scope.numHeadquartersStaff++;
             $scope.volksPrestige -= $scope.costHeadquartersStaff;
