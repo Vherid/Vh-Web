@@ -1,0 +1,56 @@
+body {
+    background: #131313;
+}
+
+.container {
+    padding: 5px;
+    width: 65%;
+    min-width: 815px;
+    background: #4D5D53;
+    color: #131313;
+    margin-bottom: 5px;
+}
+
+h1 {
+    font-family: 'UnifrakturCook';
+    font-size: 6em;
+    text-align: center;
+    color: #FCFCCA;
+}
+
+header {
+    background: #c23311;
+    position: fixed;
+    width: 100%;
+    margin-top: -20px;
+}
+
+.row {
+    margin-top: 100px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.progress {
+    border-radius: 0px;
+    margin-top: 15px;
+    background: #FCFCCA;
+}
+
+.progress-bar {
+    background: #c23311;
+}
+
+.btn {
+    border-radius: 0px;
+}
+
+.progress .progress-bar {
+    -webkit-transition: none;
+    -moz-transition: none;
+    -ms-transition: none;
+    -o-transition: none;
+    transition: none;
+}
+
+​
