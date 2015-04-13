@@ -61,7 +61,7 @@
             <div class="col-md-4">
                 <h4>Supply Rate: +3/s per unit | +{{numHeadquartersStaff*3}}/s total</h4>
             </div>
-            <button id="hire-headquartersStaff" class="btn btn-default" ng-click="hireHeadquartersStaff()" ng-disabled="costHeadquartersStaff >= volksPrestige">{{costHeadquartersStaff}} - Deploy Headquarters Staff</button>
+            <button id="hire-headquartersStaff" class="btn btn-default" ng-click="hireHeadquartersStaff()" ng-disabled="costHeadquartersStaff > volksPrestige">{{costHeadquartersStaff}} - Deploy Headquarters Staff</button>
         </div>
         <div class="container" ng-show="numHeadquartersStaff >= 1">
             <h2>Infantry</h2>
@@ -69,12 +69,12 @@
         <div class="container" ng-show="numHeadquartersStaff >= 1">
             <h3>Bolt Action Grenadier</h3>
             <h4>Units: {{numBoltActionGrenadier}}</h4>
-            <button id="hire-boltActionGrenadier" class="btn btn-default" ng-click="hireBoltActionGrenadier()" ng-disabled="costBoltActionGrenadier >= volksPrestige">{{costBoltActionGrenadier}} - Deploy Bolt Action Grenadier</button>
+            <button id="hire-boltActionGrenadier" class="btn btn-default" ng-click="hireBoltActionGrenadier()" ng-disabled="costBoltActionGrenadier > volksPrestige">{{costBoltActionGrenadier}} - Deploy Bolt Action Grenadier</button>
         </div>
         <div class="container" ng-show="numBoltActionGrenadier >= 1">
             <h3>MG34 Grenadier</h3>
             <h4>Units: {{numMG34Grenadier}}</h4>
-            <button id="hire-MG34Grenadier" class="btn btn-default" ng-click="hireMG34Grenadier()" ng-disabled="costMG34Grenadier >= volksPrestige">{{costMG34Grenadier}} - Deploy MG34 Grenadier</button>
+            <button id="hire-MG34Grenadier" class="btn btn-default" ng-click="hireMG34Grenadier()" ng-disabled="costMG34Grenadier > volksPrestige">{{costMG34Grenadier}} - Deploy MG34 Grenadier</button>
         </div>
     </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
