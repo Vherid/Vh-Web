@@ -1,6 +1,6 @@
 (function() {
-    var app = angular.module('incrementalStrelkovy', []);
-    app.controller('strelkovyController', function($scope, $interval) {
+    var app = angular.module("incrementalStrelkovy", []);
+    app.controller("strelkovyController", function($scope, $interval) {
         $scope.strelkovyGlory = 0;
         $scope.strelkovySupplies = 0;
         $scope.strelkovyFuel = 0;
@@ -44,17 +44,20 @@
         $scope.numPartisan = 0;
         $scope.costPartisan = 10;
         $scope.hirePartisan = function() {
-            $scope.numPartisan++;
+            $scope.numPartisan += chance.integer({
+                min: 1,
+                max: 5
+            });
             $scope.strelkovyGlory -= $scope.costPartisan;
             $scope.costPartisan = Math.ceil($scope.costPartisan * 1.5);
         };
 
-        $scope.numPartisanSawnOff = 0;
-        $scope.costMG34Grenadier = 10;
-        $scope.hireMG34Grenadier = function() {
-            $scope.numPartisanSawnOff++;
-            $scope.strelkovyGlory -= $scope.costMG34Grenadier;
-            $scope.costMG34Grenadier = Math.ceil($scope.costMG34Grenadier * 1.9);
+        $scope.numConscript = 0;
+        $scope.costConscript = 10;
+        $scope.hireConscript = function() {
+            $scope.numConscript++;
+            $scope.strelkovyGlory -= $scope.costConscript;
+            $scope.costConscript = Math.ceil($scope.costConscript * 1.9);
         };
 
 
@@ -66,8 +69,8 @@
             $scope.strelkovyGlory += ($scope.numPartisan * 1 / 100);
             $scope.strelkovySupplies -= ($scope.numPartisan * .1 / 100);
 
-            $scope.strelkovyGlory += ($scope.numPartisanSawnOff * 5 / 100);
-            $scope.strelkovySupplies -= ($scope.numPartisanSawnOff * .5 / 100);
+            $scope.strelkovyGlory += ($scope.numConscript * 5 / 100);
+            $scope.strelkovySupplies -= ($scope.numConscript * .5 / 100);
             // Start progressbar when prestige button is pushed
             if ($scope.gloryTimer === true) {
                 $scope.gloryTimerTime += (40 / 100);
