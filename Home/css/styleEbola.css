@@ -8,7 +8,6 @@ body {
     margin-right: auto;
     margin-left: auto;
     max-width: 60%;
-    min-width: 1050px;
 }
 
 #header,
@@ -24,4 +23,14 @@ h2 {
 
 #infographic {
     background-color: #FFBA00;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.icon {
+    padding-left: .5em;
+    padding-top: .5em;
 }
