@@ -1,16 +1,28 @@
 /*#ffc107*/
 
 body {
-    margin: 0px auto;
     background-color: #fafafa;
     color: #263238;
     line-height: 1.4
 }
+
 .container {
     margin-right: auto;
     margin-left: auto;
-    max-width: 650px;
+    width: 70%;
+    min-width: 1050px;
 }
-h1 {
+
+#header, h2 {
+    background-color: #FFBA00;
+    padding-left: .25em;
+}
+
+#title {
     font-size: 5em;
+    margin-bottom: .5em;
+}
+
+#infographic {
+    background-color: #FFBA00;
 }
