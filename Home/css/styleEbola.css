@@ -29,9 +29,13 @@ body {
 }
 
 #title {
-    font-size: 15em;
+    font-size: 13vw;
     margin-bottom: 0em;
     margin-top: 0;
+}
+
+#subtitle {
+    font-size: 1.85vw;
 }
 
 #title-block {
