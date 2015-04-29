@@ -10,10 +10,17 @@ body {
     max-width: 60%;
 }
 
-#header,
-h2 {
+#header {
     background-color: #FFBA00;
     padding-left: .25em;
+}
+
+.section-header {
+    font-size: 2.5em;
+}
+
+.article-header {
+    text-align: center;
 }
 
 #title {
@@ -33,4 +40,7 @@ img {
 .icon {
     padding-left: .5em;
     padding-top: .5em;
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
 }
