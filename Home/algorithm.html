@@ -14,9 +14,6 @@
     <!-- Custom styles for this template -->
     <link href="css/style.css" rel="stylesheet">
     <script src="https://raw.github.com/processing-js/processing-js/v1.4.8/processing.min.js"></script>
-    <script src="js/p5.min.js"></script>
-    <script src="js/p5.dom.js"></script>
-    <script language="javascript" type="text/javascript" src="js/p5filtercam.js"></script>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -34,26 +31,315 @@
                 </div>
                 <div class="col-md-9">
                     <img src="http://i.imgur.com/7ECtvEI.gif">
+                    <pre class="pre-scrollable">
+PImage img;
+color c1;
+
+void setup() {
+  size(600,800);
+  background(#FF5003);
+  img = loadImage("face.png");
+  img.resize(601,801);
+  frameRate(10);
+}
+
+void draw() {
+  // image(img, 0, 0);
+  img.loadPixels();
+  float rx1=random(img.width);
+  int x1=int(rx1);
+  int x2=0;
+  float ry1=random(img.height);
+  int y1=int(ry1);
+  int f1=0;
+  int if1=0;
+  while(f1<40)
+  {
+    for(int f2=0;f2<90;f2++)
+    {
+      for(int f3=0;f3<20;f3++)
+      {
+        c1 = img.get(x1,y1);
+        while(if1<20)
+        {
+          color c0 = img.get(x1,y1);
+          c1 = lerpColor(c0,c1,.50);
+          x1++;
+          x2++;
+          if1++;
+        }
+        x1-=x2;
+        x2=0;
+        if1=0;
+        y1++;
+        if1+=f3;
+      }
+      y1-=20;
+      fill(c1);
+      noStroke();
+      rect(x1,y1,x1+3,y1+3);
+      float rz1=random(0,10);
+      int z1=int(rz1);
+      x1=x1+z1;
+    }
+    x1=0;
+    y1=y1+10;
+    f1=f1+1;
+  }
+
+}
+                    </pre>
                 </div>
             </div>
             <div class="row rowM">
                 <div class="col-md-9 col-md-offset-3">
                     <img src="http://i.imgur.com/AS2JE0l.gif">
+                    <pre class="pre-scrollable">
+PImage img;
+color c1;
+
+void setup() {
+  size(600,750);
+  background(0);
+  img = loadImage("chigurh.jpg");
+  img.resize(601,751);
+  frameRate(600);
+}
+
+void draw() {
+  img.loadPixels();
+  float rx1=random(img.width);
+  int x1=int(rx1);
+  int x2=0;
+  float ry1=random(img.height);
+  int y1=int(ry1);
+  int f1=0;
+  int if1=0;
+  while(f1<40)
+  {
+    for(int f2=0;f2<20;f2++)
+    {
+      for(int f3=0;f3<15;f3++)
+      {
+        c1 = img.get(x1,y1);
+        while(if1<20)
+        {
+          color c0 = img.get(x1,y1);
+          c1 = lerpColor(c0,c1,.50);
+          x1++;
+          x2++;
+          if1++;
+        }
+        x1-=x2;
+        x2=0;
+        if1=0;
+        y1++;
+        if1+=f3;
+      }
+      y1-=20;
+      fill(c1);
+      noStroke();
+      triangle(x1,y1-10,x1-15,y1+15,x1+15,y1+15);
+      float rz1=random(0,200);
+      int z1=int(rz1);
+      x1=x1+z1;
+    }
+    x1=0;
+    y1=y1+30;
+    f1=f1+10;
+  }
+
+}
+                    </pre>
                 </div>
             </div>
             <div class="row rowM">
                 <div class="col-md-9 col-md-offset-3">
                     <img src="http://i.imgur.com/S0YxvYt.gif">
+                    <pre class="pre-scrollable">
+PImage img;
+color c1;
+
+void setup() {
+  size(600,750);
+  background(0);
+  img = loadImage("chigurh.jpg");
+  img.resize(601,751);
+  frameRate(10);
+}
+
+void draw() {
+  // image(img, 0, 0);
+  img.loadPixels();
+  float rx1=random(img.width);
+  int x1=int(rx1);
+  int x2=0;
+  float ry1=random(img.height);
+  int y1=int(ry1);
+  int f1=0;
+  int if1=0;
+  while(f1<80)
+  {
+    for(int f2=0;f2<60;f2++)
+    {
+      for(int f3=0;f3<20;f3++)
+      {
+        c1 = img.get(x1,y1);
+        while(if1<20)
+        {
+          color c0 = img.get(x1,y1);
+          c1 = lerpColor(c0,c1,.50);
+          x1++;
+          x2++;
+          if1++;
+        }
+        x1-=x2;
+        x2=0;
+        if1=0;
+        y1++;
+        if1+=f3;
+      }
+      y1-=20;
+      fill(c1);
+      noStroke();
+      rect(x1,y1,x1+1,y1+1);
+      float rz1=random(0,20);
+      int z1=int(rz1);
+      x1=x1+z1;
+    }
+    x1=0;
+    y1=y1+10;
+    f1=f1+1;
+  }
+  filter(POSTERIZE, 10);
+  filter(INVERT);
+}
+                    </pre>
                 </div>
             </div>
             <div class="row rowM">
                 <div class="col-md-9 col-md-offset-3">
                     <img src="http://i.imgur.com/hQBv7Ez.gif">
+                    <pre class="pre-scrollable">
+PImage img;
+color c1;
+
+void setup() {
+  size(600,750);
+  background(0);
+  img = loadImage("chigurh.jpg");
+  img.resize(601,751);
+  frameRate(300);
+}
+
+void draw() {
+  // image(img, 0, 0);
+  img.loadPixels();
+  float rx1=random(img.width);
+  int x1=int(rx1);
+  int x2=0;
+  float ry1=random(img.height);
+  int y1=int(ry1);
+  int f1=0;
+  int if1=0;
+  while(f1<80)
+  {
+    for(int f2=0;f2<60;f2++)
+    {
+      for(int f3=0;f3<20;f3++)
+      {
+        c1 = img.get(x1,y1);
+        while(if1<20)
+        {
+          color c0 = img.get(x1,y1);
+          c1 = lerpColor(c0,c1,.50);
+          x1=int(rx1);
+          x2++;
+          if1++;
+        }
+        x1-=x2;
+        x2=0;
+        if1=0;
+        y1++;
+        if1+=f3;
+      }
+      y1-=1;
+      fill(c1);
+      noStroke();
+      rect(x1,y1,x1+5,y1+5);
+      float rz1=random(0,40);
+      int z1=int(rz1);
+      x1=x1+z1;
+    }
+    x1=0;
+    y1=y1+10;
+    f1=f1+10;
+  }
+}
+                    </pre>
                 </div>
             </div>
             <div class="row rowM">
                 <div class="col-md-9 col-md-offset-3">
                     <img src="http://i.imgur.com/GEsbsz5.gif">
+                    <pre class="pre-scrollable">
+PImage img;
+color c1;
+
+void setup() {
+  size(600,750);
+  background(0);
+  img = loadImage("chigurh.jpg");
+  img.resize(601,751);
+  frameRate(300);
+}
+
+void draw() {
+  // image(img, 0, 0);
+  img.loadPixels();
+  float rx1=random(img.width);
+  int x1=int(rx1);
+  int x2=0;
+  float ry1=random(img.height);
+  int y1=int(ry1);
+  int f1=0;
+  int if1=0;
+  while(f1<80)
+  {
+    for(int f2=0;f2<60;f2++)
+    {
+      for(int f3=0;f3<20;f3++)
+      {
+        c1 = img.get(x1,y1);
+        while(if1<20)
+        {
+          color c0 = img.get(x1,y1);
+          c1 = lerpColor(c0,c1,.50);
+          x1++;
+          x2++;
+          if1++;
+        }
+        x1-=x2;
+        x2=0;
+        if1=0;
+        y1++;
+        if1+=f3;
+      }
+      y1-=20;
+      fill(c1);
+      noStroke();
+      rect(x1+rx1,y1+ry1,x1+1,y1+1);
+      rotate(.01);
+      float rz1=random(0,10);
+      int z1=int(rz1);
+      x1=x1+z1;
+    }
+    x1=0;
+    y1=y1+20;
+    f1=f1+1;
+  }
+}
+                    </pre>
                 </div>
             </div>
             <div class="rowSep"></div>
@@ -63,10 +349,294 @@
                 </div>
                 <div class="col-md-9">
                     <img src="image/faceAlg.png">
+                    <pre class="pre-scrollable">
+// Setup.
+PImage img;
+color c1;
+void setup(){
+  size(600,800);
+  background(100, 200, 255);
+  img = loadImage("face.jpg");
+  img.resize(601,801);
+}
+
+// Generating the image.
+void draw(){
+  tri1();
+  tri2();
+}
+
+// This loop grabs the average color of the image in a 20x20 upper left pointing triangular area and places a similar triangle in that area with that color.
+void tri1(){
+  int x1=0;
+  int x2=0;
+  int y1=0;
+  int f1=0;
+  int if1=0;
+  while(f1<40)
+  {
+    for(int f2=0;f2<30;f2++)
+    {
+      for(int f3=0;f3<20;f3++)
+      {
+        c1 = img.get(x1,y1);
+        while(if1<20)
+        {
+          color c0 = img.get(x1,y1);
+          c1 = lerpColor(c0,c1,.50);
+          x1++;
+          x2++;
+          if1++;
+        }
+        x1-=x2;
+        x2=0;
+        if1=0;
+        y1++;
+        if1+=f3;
+      }
+      y1-=20;
+      fill(c1);
+      noStroke();
+      triangle(x1,y1,x1+20,y1,x1,y1+20);
+      x1=x1+20;
+    }
+    x1=0;
+    y1=y1+20;
+    f1=f1+1;
+  }
+}
+
+// Same as above except does the lower right pointer
+void tri2(){
+  int x1=20;
+  int x2=0;
+  int y1=20;
+  int f1=0;
+  int if1=0;
+  while(f1<40)
+  {
+    for(int f2=0;f2<30;f2++)
+    {
+      for(int f3=0;f3<20;f3++)
+      {
+        c1 = img.get(x1,y1);
+        while(if1<20)
+        {
+          color c0 = img.get(x1,y1);
+          c1 = lerpColor(c0,c1,.50);
+          x1--;
+          x2++;
+          if1++;
+        }
+        x1+=x2;
+        x2=0;
+        if1=0;
+        y1--;
+        if1+=f3;
+      }
+      y1+=20;
+      fill(c1);
+      noStroke();
+      triangle(x1,y1,x1,y1-20,x1-20,y1);
+      x1=x1+20;
+    }
+    x1=20;
+    y1=y1+20;
+    f1=f1+1;
+  }
+}
+                    </pre>
                 </div>
             </div>
             <div class="row rowM">
-                <div class="col-md-9 col-md-offset-3" id='p5Container'>
+                <div class="col-md-9 col-md-offset-3">
+                    <img src="http://i.imgur.com/L39q9qI.gif">
+                    <pre class="pre-scrollable">
+import processing.video.*;
+Capture myCapture;
+
+PImage img;
+color c1;
+// Setup.
+void setup(){
+  size(640,480);
+  background(100, 200, 255);
+  myCapture = new Capture(this, width, height);
+  myCapture.start();
+  image(myCapture, 0, 0);
+}
+
+void draw(){
+  tri1();
+  tri2();
+}
+
+// Color Average Loop.
+void tri1(){
+  int x1=0;
+  int x2=0;
+  int y1=0;
+  int f1=0;
+  int if1=0;
+  while(f1<40)
+  {
+    for(int f2=0;f2<32;f2++)
+    {
+      for(int f3=0;f3<20;f3++)
+      {
+        c1 = myCapture.get(x1,y1);
+        while(if1<20)
+        {
+          color c0 = myCapture.get(x1,y1);
+          c1 = lerpColor(c0,c1,.50);
+          x1++;
+          x2++;
+          if1++;
+        }
+        x1-=x2;
+        x2=0;
+        if1=0;
+        y1++;
+        if1+=f3;
+      }
+      y1-=20;
+      fill(c1);
+      noStroke();
+      triangle(x1,y1,x1+20,y1,x1,y1+20);
+      x1=x1+20;
+    }
+    x1=0;
+    y1=y1+20;
+    f1=f1+1;
+  }
+}
+
+void tri2(){
+  int x1=20;
+  int x2=0;
+  int y1=20;
+  int f1=0;
+  int if1=0;
+  while(f1<40)
+  {
+    for(int f2=0;f2<32;f2++)
+    {
+      for(int f3=0;f3<20;f3++)
+      {
+        c1 = myCapture.get(x1,y1);
+        while(if1<20)
+        {
+          color c0 = myCapture.get(x1,y1);
+          c1 = lerpColor(c0,c1,.50);
+          x1--;
+          x2++;
+          if1++;
+        }
+        x1+=x2;
+        x2=0;
+        if1=0;
+        y1--;
+        if1+=f3;
+      }
+      y1+=20;
+      fill(c1);
+      noStroke();
+      triangle(x1,y1,x1,y1-20,x1-20,y1);
+      x1=x1+20;
+    }
+    x1=20;
+    y1=y1+20;
+    f1=f1+1;
+  }
+}
+
+void captureEvent(Capture myCapture) {
+  myCapture.read();
+}
+                    </pre>
+                </div>
+            </div>
+            <div class="rowSep"></div>
+            <div class="row rowM">
+                <div class="col-md-3">
+                    <h2 class="infoH">02.GAME</h2>
+                </div>
+                <div class="col-md-9">
+                    <img src="http://i.imgur.com/5TnBkop.gif">
+                    <pre class="pre-scrollable">
+//setup
+void setup() {
+  size(600, 800);
+  background(#111111);
+  frameRate(30);
+  noCursor();
+  noStroke();
+}
+
+int x=0;
+float x1=random(0,599);
+float x2=random(0,599);
+float x3=random(0,599);
+float y1=0;
+int wat=0;
+int p=0;
+
+void draw() {
+  background(#111111);
+
+  //cursor
+  fill(#ff6100);
+  rect(mouseX-2,795,5,5);
+
+  //projectiles
+  println(p);
+  if(x<30){
+    x++;
+  }
+  else if(x==30){
+      fill(#00bff3);
+      while(wat<3){
+        rect(x1,y1,20,100);
+        rect(x2,y1,20,100);
+        rect(x3,y1,20,100);
+        y1+=30;
+        wat++;
+      }
+      wat=0;
+      y1+=5;
+    if(y1>810) {
+      y1=0;
+      place();
+    }
+  }
+  else{
+    x=0;
+  }
+
+  // point system
+  int s=0;
+
+  while(s<30) {
+    s++;
+    if(s==30) {
+      p++;
+    }
+  }
+  s=0;
+
+  color cp = get(mouseX-2, 790);
+  if(cp==#00bff3) {
+    p=0;
+  }
+}
+
+
+void place() {
+  x1=random(0,599);
+  x2=random(0,599);
+  x3=random(0,599);
+}
+                    </pre>
                 </div>
             </div>
         </div>
