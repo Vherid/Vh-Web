@@ -1,40 +1,43 @@
-PImage img;
-color c1;
+var capture;
 
-void setup() {
-  size(640,480);
-  background(100, 200, 255);
-  myCapture = createCapture(VIDEO);
-  myCapture.start();
-  image(myCapture, 0, 0);
+var img;
+var c1;
+
+function setup() {
+  var myCanvas = createCanvas(640,480);
+  myCanvas.parent('p5Container');
+  background(255);
+  capture = createCapture(VIDEO);
+  capture.size(640, 480);
+  image(capture, 0, 0);
   if(mouseP==false) {
     noLoop();
     mouseP=true;
   }
 }
 
-void draw(){
+function draw(){
   tri1();
   tri2();
 }
 
 // Color Average Loop.
-void tri1(){
-  int x1=0;
-  int x2=0;
-  int y1=0;
-  int f1=0;
-  int if1=0;
+function tri1(){
+  var x1=0;
+  var x2=0;
+  var y1=0;
+  var f1=0;
+  var if1=0;
   while(f1<40)
   {
-    for(int f2=0;f2<32;f2++)
+    for(var f2=0;f2<32;f2++)
     {
-      for(int f3=0;f3<20;f3++)
+      for(var f3=0;f3<20;f3++)
       {
-        c1 = myCapture.get(x1,y1);
+        c1 = capture.get(x1,y1);
         while(if1<20)
         {
-          color c0 = myCapture.get(x1,y1);
+          var c0 = capture.get(x1,y1);
           c1 = lerpColor(c0,c1,.50);
           x1++;
           x2++;
@@ -58,22 +61,22 @@ void tri1(){
   }
 }
 
-void tri2(){
-  int x1=20;
-  int x2=0;
-  int y1=20;
-  int f1=0;
-  int if1=0;
+function tri2(){
+  var x1=20;
+  var x2=0;
+  var y1=20;
+  var f1=0;
+  var if1=0;
   while(f1<40)
   {
-    for(int f2=0;f2<32;f2++)
+    for(var f2=0;f2<32;f2++)
     {
-      for(int f3=0;f3<20;f3++)
+      for(var f3=0;f3<20;f3++)
       {
-        c1 = myCapture.get(x1,y1);
+        c1 = capture.get(x1,y1);
         while(if1<20)
         {
-          color c0 = myCapture.get(x1,y1);
+          var c0 = capture.get(x1,y1);
           c1 = lerpColor(c0,c1,.50);
           x1--;
           x2++;
@@ -97,14 +100,9 @@ void tri2(){
   }
 }
 
-void captureEvent(Capture myCapture) {
-  myCapture.read();
-}
+var mouseP=false;
 
-
-public boolean mouseP=false;
-
-void mousePressed() {
+function touchStarted() {
   if(mouseP==false) {
     noLoop();
     mouseP=true;

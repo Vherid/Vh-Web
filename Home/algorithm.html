@@ -14,6 +14,8 @@
     <!-- Custom styles for this template -->
     <link href="css/style.css" rel="stylesheet">
     <script src="https://raw.github.com/processing-js/processing-js/v1.4.8/processing.min.js"></script>
+    <script src="js/p5.min.js"></script>
+    <script language="javascript" type="text/javascript" src="js/p5filtercam.js"></script>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -63,11 +65,9 @@
                 </div>
             </div>
             <div class="row rowM">
-                <div class="col-md-9 col-md-offset-3">
-                    <canvas data-processing-sources="processing/Glitchcam.pde" class="center-block" id="processingCanvas"></canvas>
+                <div class="col-md-9 col-md-offset-3" id='p5Container'>
                 </div>
             </div>
-            <canvas data-processing-sources="processing/Glitch5.pde" class="center-block" id="processingCanvas"></canvas>
         </div>
     </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
