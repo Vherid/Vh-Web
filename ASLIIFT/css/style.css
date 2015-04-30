@@ -38,4 +38,16 @@ input::-webkit-inner-spin-button {
     background-color: #cc6055;
     border-radius: 0;
     border: 0px;
+    color: #eff3f3;
+}
+
+.btn-center {
+    text-align: center;
+}
+
+.form-control {
+    border-radius: 0;
+    color: #cc6055;
+    font-size: 1.25em;
+    height: 5%;
 }

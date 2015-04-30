@@ -69,7 +69,9 @@
                     </div>
                 </div>
             </div>
-            <button class="btn btn-primary btn-lg btn-vis" id="rollButton" ng-click="rollDie()">Roll FT</button>
+            <div class="btn-center">
+            <button class="btn btn-default btn-lg btn-vis btn-block" id="rollButton" ng-click="rollDie()">Roll FT</button>
+            </div>
         </form>
         <div class="rollResults" ng-show="rollPushed">
             <h3>Dice Rolls are: <span id="colorDie">{{dieOne}}</span>|{{dieTwo}}</h3>
@@ -107,7 +109,9 @@
                     <input type="checkbox" ng-model="HTHCheckBox"> <strong>HTH</strong>
                 </label>
             </div>
-            <button class="btn btn-primary btn-lg btn-vis" id="rollButtonCC" ng-click="rollDieCC()">Roll CC</button>
+            <div class="btn-center">
+            <button class="btn btn-default btn-lg btn-vis btn-block" id="rollButtonCC" ng-click="rollDieCC()">Roll CC</button>
+            </div>
         </form>
         <div class="rollResults" ng-show="rollPushedCC">
             <h3>Odds are {{oddsResult}} | To Kill # is {{toKill}}</h3>
@@ -121,7 +125,10 @@
                 <label for "modifierEntry">Leader Creation Modifier</label>
                 <input class="form-control" id="modifierEntryLC" ng-model="LCDRM" type="number">
             </div>
-            <button class="btn btn-primary btn-lg btn-vis" id="rollButtonLC" ng-click="rollDieLC()" ng-show="dieTotalCC===2">Roll LC</button>
+            <div class="btn-center
+">
+            <button class="btn btn-default btn-lg btn-vis btn-block" id="rollButtonLC" ng-click="rollDieLC()" ng-show="dieTotalCC===2">Roll LC</button>
+            </div>
             <h3 ng-show="rollPushedLC">Die Roll is: <span id="colorDie">{{dieLC}}</h3>
             <h2 ng-show="rollPushedLC">Total: {{totalLC}}</h2>
             <div class="alert alert-warning" role="alert" ng-show="rollPushedLC"><strong>{{LCResult}}</strong> Leader Created!</div>
