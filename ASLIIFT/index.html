@@ -10,6 +10,7 @@
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,300,700' rel='stylesheet' type='text/css'>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -19,24 +20,27 @@
 </head>
 
 <body ng-app="iiftApp">
+    <header>
+        <h1>Advanced Squad Leader</h1>
+    </header>
     <div class="container" ng-controller="iiftRoller">
         <header>
-            <h1>Advanced Squad Leader
-        <br/>Incremental Infantry Fire Table (IFT/IIFT)
-      </h1>
+            <h1>Incremental Infantry Fire Table</h1>
         </header>
         <form>
-            <div class="form-group">
-                <label for="firepowerEntry">Firepower</label>
-                <input min="1" class="form-control" id="firepowerEntry" ng-model="FP" type="number" step="any">
-            </div>
-            <div class="form-group">
-                <label for "modifierEntry">Modifier</label>
-                <input class="form-control" id="modifierEntry" ng-model="TEM" type="number">
-            </div>
-            <div class="form-group">
-                <label for "ROFEntry">ROF</label>
-                <input class="form-control" id="ROFEntry" ng-model="ROF" type="number">
+            <div class="row">
+                <div class="form-group col-md-4">
+                    <label for="firepowerEntry">Firepower</label>
+                    <input min="1" class="form-control" id="firepowerEntry" ng-model="FP" type="number" step="any">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for "modifierEntry">Modifier</label>
+                    <input class="form-control" id="modifierEntry" ng-model="TEM" type="number">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for "ROFEntry">ROF</label>
+                    <input class="form-control" id="ROFEntry" ng-model="ROF" type="number">
+                </div>
             </div>
             <div class="checkbox">
                 <label>
@@ -54,12 +58,18 @@
                 </label>
             </div>
             <div class="form-group SANN" ng-show="activateSAN">
-                <label for="alliesSANNumber">Allies SAN</label>
-                <input min="2" max="7" class="form-control" id="alliesSANNumber" ng-model="alliesSANN" type="number" step="any" maxlength="1">
-                <label for="axisSANNumber">Axis SAN</label>
-                <input min="2" max="7" class="form-control" id="axisSANNumber" ng-model="axisSANN" type="number" step="any" maxlength="1">
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="alliesSANNumber">Allies SAN</label>
+                        <input min="2" max="7" class="form-control" id="alliesSANNumber" ng-model="alliesSANN" type="number" step="any" maxlength="1">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="axisSANNumber">Axis SAN</label>
+                        <input min="2" max="7" class="form-control" id="axisSANNumber" ng-model="axisSANN" type="number" step="any" maxlength="1">
+                    </div>
+                </div>
             </div>
-            <button class="btn btn-primary btn-lg" id="rollButton" ng-click="rollDie()">Roll FT</button>
+            <button class="btn btn-primary btn-lg btn-vis" id="rollButton" ng-click="rollDie()">Roll FT</button>
         </form>
         <div class="rollResults" ng-show="rollPushed">
             <h3>Dice Rolls are: <span id="colorDie">{{dieOne}}</span>|{{dieTwo}}</h3>
@@ -78,24 +88,26 @@
             <h1>Close Combat Table</h1>
         </header>
         <form>
-            <div class="form-group">
+        <div class="row">
+            <div class="form-group col-md-4">
                 <label for="firepowerEntry">Attacker's Firepower</label>
                 <input min="1" class="form-control" id="attackFP" ng-model="AFP" type="number" step="any">
             </div>
-            <div class="form-group">
+            <div class="form-group col-md-4">
                 <label for "modifierEntry">Defender's Firepower</label>
                 <input class="form-control" id="defendFP" ng-model="DFP" type="number" step="any">
             </div>
-            <div class="form-group">
+            <div class="form-group col-md-4">
                 <label for "modifierEntry">Modifier</label>
                 <input class="form-control" id="modifierEntryCC" ng-model="CCDRM" type="number">
+            </div>
             </div>
             <div class="checkbox">
                 <label>
                     <input type="checkbox" ng-model="HTHCheckBox"> <strong>HTH</strong>
                 </label>
             </div>
-            <button class="btn btn-primary btn-lg" id="rollButtonCC" ng-click="rollDieCC()">Roll CC</button>
+            <button class="btn btn-primary btn-lg btn-vis" id="rollButtonCC" ng-click="rollDieCC()">Roll CC</button>
         </form>
         <div class="rollResults" ng-show="rollPushedCC">
             <h3>Odds are {{oddsResult}} | To Kill # is {{toKill}}</h3>
@@ -106,10 +118,10 @@
             <div class="alert alert-danger" role="alert" ng-show="dieTotalCCM<toKill">Defenders Killed!</div>
             <div class="alert alert-info" role="alert" ng-show="dieTotalCCM===2">Leader Creation Activated!</div>
             <div class="form-group" ng-show="dieTotalCC===2">
-                <label for "modifierEntry">Modifier</label>
+                <label for "modifierEntry">Leader Creation Modifier</label>
                 <input class="form-control" id="modifierEntryLC" ng-model="LCDRM" type="number">
             </div>
-            <button class="btn btn-primary btn-lg" id="rollButtonLC" ng-click="rollDieLC()" ng-show="dieTotalCC===2">Roll LC</button>
+            <button class="btn btn-primary btn-lg btn-vis" id="rollButtonLC" ng-click="rollDieLC()" ng-show="dieTotalCC===2">Roll LC</button>
             <h3 ng-show="rollPushedLC">Die Roll is: <span id="colorDie">{{dieLC}}</h3>
             <h2 ng-show="rollPushedLC">Total: {{totalLC}}</h2>
             <div class="alert alert-warning" role="alert" ng-show="rollPushedLC"><strong>{{LCResult}}</strong> Leader Created!</div>
