@@ -1,27 +1,24 @@
-// Setup.
 PImage img;
 color c1;
-void setup(){
-  size(600,800);
-  background(#FF5003);
-  img = loadImage("image/face.png");
-  img.resize(601,801);
+
+void setup() {
+  size(640,480);
+  background(100, 200, 255);
+  myCapture = new Capture(this, width, height);
+  myCapture.start();
+  image(myCapture, 0, 0);
   if(mouseP==false) {
     noLoop();
     mouseP=true;
   }
 }
 
-// Generating the image.
 void draw(){
-for(int triRun=0;triRun<4;triRun++) {
   tri1();
   tri2();
 }
-  exit();
-}
 
-// This loop grabs the average color of the image in a 20x20 upper left pointing triangular area and places a similar triangle in that area with that color.
+// Color Average Loop.
 void tri1(){
   int x1=0;
   int x2=0;
@@ -30,14 +27,14 @@ void tri1(){
   int if1=0;
   while(f1<40)
   {
-    for(int f2=0;f2<30;f2++)
+    for(int f2=0;f2<32;f2++)
     {
       for(int f3=0;f3<20;f3++)
       {
-        c1 = img.get(x1,y1);
+        c1 = myCapture.get(x1,y1);
         while(if1<20)
         {
-          color c0 = img.get(x1,y1);
+          color c0 = myCapture.get(x1,y1);
           c1 = lerpColor(c0,c1,.50);
           x1++;
           x2++;
@@ -61,7 +58,6 @@ void tri1(){
   }
 }
 
-// Same as above except does the lower right pointer
 void tri2(){
   int x1=20;
   int x2=0;
@@ -70,14 +66,14 @@ void tri2(){
   int if1=0;
   while(f1<40)
   {
-    for(int f2=0;f2<30;f2++)
+    for(int f2=0;f2<32;f2++)
     {
       for(int f3=0;f3<20;f3++)
       {
-        c1 = img.get(x1,y1);
+        c1 = myCapture.get(x1,y1);
         while(if1<20)
         {
-          color c0 = img.get(x1,y1);
+          color c0 = myCapture.get(x1,y1);
           c1 = lerpColor(c0,c1,.50);
           x1--;
           x2++;
@@ -98,5 +94,23 @@ void tri2(){
     x1=20;
     y1=y1+20;
     f1=f1+1;
+  }
+}
+
+void captureEvent(Capture myCapture) {
+  myCapture.read();
+}
+
+
+public boolean mouseP=false;
+
+void mousePressed() {
+  if(mouseP==false) {
+    noLoop();
+    mouseP=true;
+  }
+  else {
+    loop();
+    mouseP=false;
   }
 }
