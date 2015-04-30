@@ -13,7 +13,7 @@ h1 {
 }
 
 .infoD {
-    margin-bottom: 150px;
+    margin-bottom: 100px;
 }
 
 #splash {
@@ -45,4 +45,17 @@ h1 {
 img {
     max-width: 100%;
     height: auto;
+}
+
+
+a:link, a:visited, a:hover {
+    color: #FF5003;
+}
+
+a:hover {
+    font-style: none;
+}
+
+#resume-link {
+    font-size: 2em;
 }
