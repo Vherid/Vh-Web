@@ -58,3 +58,11 @@ header p {
 #game-header {
     margin-top: 100px;
 }
+
+h6 {
+    text-align: right;
+}
+
+p {
+    margin-bottom: 1em;
+}
