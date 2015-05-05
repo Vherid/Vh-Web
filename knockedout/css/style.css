@@ -53,6 +53,7 @@ body {
 
 header p {
     letter-spacing: 3px;
+    margin-bottom: 0;
 }
 
 #game-header {
@@ -65,4 +66,7 @@ h6 {
 
 p {
     margin-bottom: 1em;
+}
+ul {
+    margin-left: 10px;
 }
