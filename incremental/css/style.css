@@ -1,0 +1,74 @@
+body {
+    background: #212121;
+    font-family: 'Vollkorn', serif;
+}
+
+.container {
+    padding: 1em;
+    width: 60%;
+    min-width: 800px;
+    background: #90a4ae;
+    color: #212121;
+    margin-bottom: .5em;
+}
+
+h1,
+#resource-number {
+    font-size: 8em;
+    color: #dd2c00;
+    font-family: 'Amatic SC';
+}
+
+h2 {
+    text-align: center;
+}
+
+#resource-number {
+    font-size: 4em;
+    font-family: 'Vollkorn', serif;
+}
+
+header {
+    background: #cfd8dc;
+    position: fixed;
+    width: 100%;
+    margin-top: -1em;
+    z-index: 357;
+}
+
+#resource-row {
+    margin-top: 8em;
+    text-align: center;
+}
+
+.progress {
+    border-radius: 0px;
+    margin-top: 1em;
+    background: #cfd8dc;
+}
+
+.progress-bar {
+    background: #e64a19;
+}
+
+.btn {
+    border-radius: 0px;
+}
+
+.progress .progress-bar {
+    -webkit-transition: none;
+    -moz-transition: none;
+    -ms-transition: none;
+    -o-transition: none;
+    transition: none;
+}
+
+.alert {
+    margin-top: 1em;
+}
+
+img {
+    display: block;
+    height: auto;
+    max-width: 100%;
+}
