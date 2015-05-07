@@ -13,24 +13,35 @@
         $(this).addClass('active');
     })
 
+    $('.skill-option').click(function() {
+        $('.skill-option').removeClass('active');
+        $(this).addClass('active');
+    })
+
     var app = angular.module("dwarfFortressArena", []);
     app.controller("arenaHireController", function($scope) {
         $scope.hirePointsAmount = 1500;
+        var racePointsAmount = 1500
 
         $scope.setRaceKobold = function() {
-            $scope.hirePointsAmount = 1500;
+            racePointsAmount = 1500;
+            $scope.hirePointsAmount = racePointsAmount;
         }
         $scope.setRaceGoblin = function() {
-            $scope.hirePointsAmount = 1400;
+            racePointsAmount = 1400;
+            $scope.hirePointsAmount = racePointsAmount;
         }
         $scope.setRaceElf = function() {
-            $scope.hirePointsAmount = 1350;
+            racePointsAmount = 1350;
+            $scope.hirePointsAmount = racePointsAmount;
         }
         $scope.setRaceDwarf = function() {
-            $scope.hirePointsAmount = 1300;
+            racePointsAmount = 1300;
+            $scope.hirePointsAmount = racePointsAmount;
         }
         $scope.setRaceHuman = function() {
-            $scope.hirePointsAmount = 1200;
+            racePointsAmount = 1200;
+            $scope.hirePointsAmount = racePointsAmount;
         }
 
         $scope.toggleWeapon = {item: -1};
@@ -38,6 +49,14 @@
 
         this.armaments = weapons;
         this.armMaterials = materials;
+
+        var skillCost = 300;
+        $scope.buySkill = function() {
+            $scope.hirePointsAmount = racePointsAmount - skillCost;
+        }
+        $scope.noSkill = function() {
+            $scope.hirePointsAmount = racePointsAmount;
+        }
 
     });
 

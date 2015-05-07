@@ -125,3 +125,19 @@ a:focus {
 section h2 {
     padding-left: 3px;
 }
+
+.btn-default {
+    color: #696153;
+    background-color: #171515;
+}
+
+.btn {
+    border: 2px solid #696153;
+    border-radius: 0px;
+}
+
+#hire-button-section {
+    text-align: center;
+    margin-top: 3em;
+    margin-bottom: 1em;
+}

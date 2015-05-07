@@ -77,10 +77,22 @@
                     <h2>Armor Kit</h2>
                     <ul class="nav nav-pills nav-justified">
                         <li class="armor-option active" id='armor-option-none'><a href="#">None</a></li>
-                        <li class="armor-option" id='armor-option-light'><a href="#">Light</a></li>
-                        <li class="armor-option" id='armor-option-medium'><a href="#">Medium</a></li>
-                        <li class="armor-option" id='armor-option-heavy'><a href="#">Heavy</a></li>
+                        <li class="armor-option" id='armor-option-light'><a href="#"><strong>200</strong> Light</a></li>
+                        <li class="armor-option" id='armor-option-medium'><a href="#"><strong>400</strong> Medium</a></li>
+                        <li class="armor-option" id='armor-option-heavy'><a href="#"><strong>600</strong> Heavy</a></li>
                     </ul>
+                </section>
+                <section>
+                    <h2>Skills</h2>
+                    <ul class="nav nav-pills nav-justified">
+                        <li class="skill-option active" id='skill-option-none'><a href="#" ng-click="noSkill()">None</a></li>
+                        <li class="skill-option" id='skill-option-light'><a href="#" ng-click="buySkill()"><strong>{{ skillCost }}</strong> Warrior</a></li>
+                        <li class="skill-option" id='skill-option-medium'><a href="#" ng-click="buySkill()"><strong>{{ skillCost }}</strong> Rogue</a></li>
+                        <li class="skill-option" id='skill-option-heavy'><a href="#" ng-click="buySkill()"><strong>{{ skillCost }}</strong> Paladin</a></li>
+                    </ul>
+                </section>
+                <section id="hire-button-section">
+                    <button class="btn btn-default" type="submit">Hire</button>
                 </section>
             </div>
         </div>
