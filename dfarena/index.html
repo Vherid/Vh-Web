@@ -26,22 +26,25 @@
             <img src="img/dfarenaland.png" alt="Dwarf Fortress Arena">
             <p>A Massacre of Grand Proportions</p>
             <div id="landing-nav">
-                <a href="hire.html">Hire</a> / <a href="#">View</a>
+                <a href="#" data-toggle="modal" data-target="#hireModal">Hire</a> / <a href="#">View</a>
             </div>
         </div>
     </header>
-    <div class="container" id="hire-block">
-        <img src="http://i.imgur.com/IjTApwp.png" alt="Dwarf Fortress Arena">
-        <h1>Hiring a Champion</h1>
-        <div id="hire-card">
-            <h2># PTS</h2>
-            <form>
-                <div class="form-group">
-                <label for="form-hire-name">Name</label>
-                <input type="text" id="form-hire-name" placeholder="Urist">
+    <div class="modal fade" id="hireModal" tabindex="-1" role="dialog" aria-labelledby="hireModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h6>Hiring a Champion</h6>
+                    <h2># PTS</h2>
+                    <form>
+                        <div class="form-group">
+                            <label for="form-hire-name">Name</label>
+                            <input type="text" id="form-hire-name" placeholder="Urist">
+                        </div>
+                    </form>
+                    <h2>Race</h2>
                 </div>
-            </form>
-            <h2>Race</h2>
+            </div>
         </div>
     </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -49,6 +52,7 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
     <script src="js/angular.min.js"></script>
+    <script src="js/app.js"></script>
 </body>
 
 </html>

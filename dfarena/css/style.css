@@ -45,3 +45,8 @@ input {
     border: none;
     color: #696153;
 }
+
+.modal-content {
+    background-color: #171515;
+    color: #696153;
+}
