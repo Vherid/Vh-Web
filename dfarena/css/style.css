@@ -1,0 +1,47 @@
+body {
+    background-color: #171515;
+    color: #696153;
+    font-family: 'Vollkorn', serif;
+}
+
+#header {
+    font-size: 1.25em;
+    height: 100vh;
+    text-align: center;
+}
+
+#header p {
+    margin-top: .5em;
+}
+
+#landing-nav {
+    font-size: 1em;
+    margin-top: 5em;
+}
+
+#landing-block {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+a:link {
+    text-decoration: none;
+    color: #ab452f;
+}
+
+a:visited {
+    text-decoration: none;
+    color: #ab452f;
+}
+
+a:hover {
+    color: #d91404;
+}
+
+input {
+    background-color: #272525;
+    border: none;
+    color: #696153;
+}
