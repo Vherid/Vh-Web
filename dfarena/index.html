@@ -20,7 +20,7 @@
     <![endif]-->
 </head>
 
-<body>
+<body ng-app="dwarfFortressArena">
     <header id="header">
         <div class="container-fluid" id="landing-block">
             <img src="img/dfarenaland.png" alt="Dwarf Fortress Arena">
@@ -30,22 +30,61 @@
             </div>
         </div>
     </header>
-    <div class="modal fade" id="hireModal" tabindex="-1" role="dialog" aria-labelledby="hireModalLabel" aria-hidden="true">
+    <div class="modal fade" id="hireModal" tabindex="-1" role="dialog" aria-labelledby="hireModalLabel" aria-hidden="true" ng-controller="arenaHireController as arena">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h6>Hiring a Champion</h6>
-                    <h2># PTS</h2>
-                    <form>
-                        <div class="form-group">
-                            <label for="form-hire-name">Name</label>
-                            <input type="text" id="form-hire-name" placeholder="Urist">
-                        </div>
-                    </form>
-                    <h2>Race</h2>
+                    <h6>Create a Gladiator</h6>
                 </div>
+                <div id="hire-header" class="row">
+                    <div class=" col-md-6">
+                        <form>
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="form-hire-name" placeholder="Urist">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-md-6">
+                        <h2 id="hire-pts-amount">{{ hirePointsAmount }} pts</h2>
+                    </div>
+                </div>
+                <section>
+                    <h2>Race</h2>
+                    <ul class="nav nav-pills nav-justified">
+                        <li class="race-option active" id='race-option-kobold'><a href="#" ng-click="setRaceKobold()">Kobold</a></li>
+                        <li class="race-option" id='race-option-goblin'><a href="#" ng-click="setRaceGoblin()">Goblin</a></li>
+                        <li class="race-option" id='race-option-elf'><a href="#" ng-click="setRaceElf()">Elf</a></li>
+                        <li class="race-option" id='race-option-dwarf'><a href="#" ng-click="setRaceDwarf()">Dwarf</a></li>
+                        <li class="race-option" id='race-option-human'><a href="#" ng-click="setRaceHuman()">Human</a></li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Weapon</h2>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <ul class="nav nav-pills nav-stacked">
+                                <li class="weapon-option" ng-repeat="armament in arena.armaments" ng-click="toggleWeapon.item = $index" ng-class="{'active' : toggleWeapon.item == $index}"><a href="#"><strong>{{ armament.price }}</strong> {{ armament.name }}</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-8">
+                            <ul class="nav nav-pills nav-stacked">
+                                <li class="weapon-material-option" ng-repeat="armMaterial in arena.armMaterials" ng-click="toggleWeaponMaterial.item = $index" ng-class="{'active' : toggleWeaponMaterial.item == $index}"><a href="#"><strong>{{ armMaterial.name }}</strong> | Value Multiplier: {{ armMaterial.multi }} | Weight: {{ armMaterial.weight }} | Edge: {{ armMaterial.edge }} | Armor: {{ armMaterial.armor }}</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <h2>Armor Kit</h2>
+                    <ul class="nav nav-pills nav-justified">
+                        <li class="armor-option active" id='armor-option-none'><a href="#">None</a></li>
+                        <li class="armor-option" id='armor-option-light'><a href="#">Light</a></li>
+                        <li class="armor-option" id='armor-option-medium'><a href="#">Medium</a></li>
+                        <li class="armor-option" id='armor-option-heavy'><a href="#">Heavy</a></li>
+                    </ul>
+                </section>
             </div>
         </div>
+    </div>
     </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="js/jquery.min.js"></script>

@@ -36,17 +36,92 @@ a:visited {
     color: #ab452f;
 }
 
-a:hover {
+#landing-nav a:hover {
     color: #d91404;
-}
-
-input {
-    background-color: #272525;
-    border: none;
-    color: #696153;
 }
 
 .modal-content {
     background-color: #171515;
     color: #696153;
+    border-radius: 0;
+}
+
+.modal-header {
+    padding: 0;
+    padding-left: 3px;
+    border: 0;
+    padding-bottom: 3px;
+}
+
+#hire-header {
+    background-color: #0d0b0b;
+    height: 100%;
+}
+
+#hire-pts-amount {
+    text-align: center;
+    font-weight: 700;
+}
+
+.form-control {
+    height: 1.5em;
+    padding: 0 3px;
+    color: #696153;
+    background-color: #272525;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    transition: none;
+}
+
+.form-control:focus {
+    border-color: 0;
+    outline: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.form-control::-moz-placeholder {
+    color: #171515;
+    opacity: .5;
+}
+
+.form-control:-ms-input-placeholder {
+    color: #171515;
+}
+
+.form-control::-webkit-input-placeholder {
+    color: #171515;
+}
+
+#hire-header .form-group {
+    margin-bottom: 0
+}
+
+#form-hire-name {
+    font-size: 3em;
+}
+
+.nav-pills>li>a {
+    border-radius: 0;
+}
+
+.nav>li>a:focus,
+.nav>li>a:hover {
+    background-color: #272525;
+}
+
+.nav-pills > li.active > a,
+.nav-pills > li.active > a:focus,
+.nav-pills > li.active > a:hover {
+    color: #ab452f;
+    background-color: #272525;
+}
+
+a:focus {
+    outline: none
+}
+
+section h2 {
+    padding-left: 3px;
 }
