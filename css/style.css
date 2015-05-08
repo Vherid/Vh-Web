@@ -59,3 +59,7 @@ a:hover {
 #resume-link {
     font-size: 2em;
 }
+
+img {
+    border-bottom: 2px solid #FF5003;
+}
