@@ -60,6 +60,119 @@
 
     });
 
+    app.controller("arenaViewController", function($scope) {
+        this.contestants = gladiators;
+
+    });
+
+    app.controller("arenaContentionController", function($scope) {
+        this.contentions = contests;
+
+    });
+
+    var contests = [
+    {
+        name: "Series 1",
+        numcontests: "12",
+        matchnum: "35"
+    },
+    {
+        name: "Series 2",
+        numcontests: "16",
+        matchnum: "41"
+    },
+    {
+        name: "Series 3",
+        numcontests: "24",
+        matchnum: "67"
+    },
+    {
+        name: "Series 4",
+        numcontests: "10",
+        matchnum: "31"
+    },
+    {
+        name: "Series 5",
+        numcontests: "8",
+        matchnum: "25"
+    },
+    {
+        name: "Series 6",
+        numcontests: "11",
+        matchnum: "84"
+    }
+    ]
+
+    var gladiators = [
+        {
+            name: "Urist",
+            race: "Dwarf",
+            wins: "10",
+            losses: "0"
+        },
+        {
+            name: "Frank",
+            race: "Human",
+            wins: "9",
+            losses: "1"
+        },
+        {
+            name: "Zero",
+            race: "Elf",
+            wins: "8",
+            losses: "2"
+        },
+        {
+            name: "Trollface",
+            race: "Goblin",
+            wins: "8",
+            losses: "4"
+        },
+        {
+            name: "Ushrek",
+            race: "Kobold",
+            wins: "7",
+            losses: "2"
+        },
+        {
+            name: "Udyr",
+            race: "Dwarf",
+            wins: "6",
+            losses: "4"
+        },
+        {
+            name: "Azhek",
+            race: "Elf",
+            wins: "3",
+            losses: "7"
+        },
+        {
+            name: "Notle",
+            race: "Goblin",
+            wins: "2",
+            losses: "10"
+        },
+        {
+            name: "Steve",
+            race: "Human",
+            wins: "1",
+            losses: "8"
+        },
+        {
+            name: "Buschemi",
+            race: "Dwarf",
+            wins: "3",
+            losses: "0"
+        },
+        {
+            name: "Kid",
+            race: "Human",
+            wins: "0",
+            losses: "0"
+        }
+
+    ];
+
     var weapons = [{
             name: "Dagger",
             price: 90,

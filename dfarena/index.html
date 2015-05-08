@@ -26,7 +26,8 @@
             <img src="img/dfarenaland.png" alt="Dwarf Fortress Arena">
             <p>A Massacre of Grand Proportions</p>
             <div id="landing-nav">
-                <a href="#" data-toggle="modal" data-target="#hireModal">Hire</a> / <a href="#">View</a>
+                <h4><a href="#" id="contention-link"  data-toggle="modal" data-target="#contentionModal">Contentions</a></h4>
+                <a href="#" data-toggle="modal" data-target="#hireModal">Hire</a> / <a href="#" data-toggle="modal" data-target="#viewModal">View</a>
             </div>
         </div>
     </header>
@@ -97,6 +98,89 @@
             </div>
         </div>
     </div>
+    <div class="modal fade" id="viewModal" tabindex="-1" role="dialog" aria-labelledby="viewModalLabel" aria-hidden="true" ng-controller="arenaViewController as arenaView">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h6>View Gladiators</h6>
+                </div>
+                <section>
+                    <ul class="nav nav-pills nav-stacked">
+                    <div class="row key">
+                    <p class="col-md-4">Name</p>
+                    <p class="col-md-4">Race</p>
+                    <p class="col-md-4"><span id="contestant-wins">Wins</span> - <span id="contestant-loss">Losses</span></p>
+                    </div>
+                        <li class="arena-contestants" ng-repeat="contestant in arenaView.contestants">
+                            <a href="#collapseContestant" class="scores" data-toggle="collapse">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <p>{{ contestant.name }}</p>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <p>{{ contestant.race }}</p>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <p><span id="contestant-wins">{{ contestant.wins }}</span> - <span id="contestant-loss">{{ contestant.losses }}</span></p>
+                                    </div>
+                                </div>
+                            </a>
+                            <div class="collapse" id="collapseContestant">
+                                <div class="well">
+                                    <div>
+                                        <p class="gold">1st Place Series 1</p>
+                                        <p class="silver">2nd Place Series 2</p>
+                                        <p>3rd Place Series 5</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="contentionModal" tabindex="-1" role="dialog" aria-labelledby="viewModalLabel" aria-hidden="true" ng-controller="arenaContentionController as arenaContention">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h6>View Contentions</h6>
+                </div>
+                <section>
+                    <ul class="nav nav-pills nav-stacked">
+                    <div class="row key">
+                    <p class="col-md-4">Name</p>
+                    <p class="col-md-4"># Contestants</p>
+                    <p class="col-md-4"># Matches Played</p>
+                    </div>
+                        <li class="arena-contentions" ng-repeat="contention in arenaContention.contentions">
+                            <a href="#collapseContention" class="scores" data-toggle="collapse">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <p>{{ contention.name }}</p>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <p>{{ contention.numcontests }}</p>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <p>{{ contention.matchnum }}</p>
+                                    </div>
+                                </div>
+                            </a>
+                            <div class="collapse" id="collapseContention">
+                                <div class="well">
+                                    <div>
+                                        <p class="gold">1st Place Urist</p>
+                                        <p class="silver">2nd Place Hulk</p>
+                                        <p>3rd Place AndyD</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+        </div>
     </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="js/jquery.min.js"></script>

@@ -138,6 +138,45 @@ section h2 {
 
 #hire-button-section {
     text-align: center;
-    margin-top: 3em;
+    margin-top: 2em;
     margin-bottom: 1em;
+}
+
+ #contention-link {
+    color: #f39c12;
+}
+
+.scores {
+    background-color: #272525;
+}
+
+#contestant-wins {
+    color: #9e9a27;
+}
+
+#contestant-loss {
+    color: #d91404;
+}
+
+.well {
+    min-height: 20px;
+    padding: 19px;
+    margin-bottom: 20px;
+    background-color: #0d0b0b;
+    border: 0;
+    border-radius: 0;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.05) inset;
+}
+
+.gold {
+    color: #f39c12;
+}
+
+.silver {
+    color: #707070;
+}
+
+.key {
+    padding-left: 15px;
+    padding-right: 15px;
 }
