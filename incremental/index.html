@@ -21,23 +21,23 @@
 
 <body ng-app="incrementalStrelkovy">
     <div ng-controller="strelkovyController">
-        <header class="text-center">
-            <h1>227 Udarny Strelkovy Batalon</h1>
-        </header>
-        <div class="container">
-            <div id="resource-row" class="row">
+        <div class="container-fluid">
+            <div id="header" class="row">
+                <div class="col-md-3">
+                    <h1>227 Udarny Strelkovy Batalon</h1>
+                </div>
                 <div class="col-md-3">
                     <h2 id="resource-number">{{strelkovyGlory | number: 0}}</h2>
-                    <h2>Glory</h2></div>
+                    <h2>Glory</h2>
+                </div>
                 <div class="col-md-3">
                     <h2 id="resource-number">{{strelkovySupplies | number: 0}}</h2>
-                    <h2>Supplies</h2></div>
+                    <h2>Supplies</h2>
+                </div>
                 <div class="col-md-3">
                     <h2 id="resource-number">{{strelkovyFuel | number: 0}}</h2>
-                    <h2>Fuel</h2></div>
-                <div class="col-md-3">
-                    <h2 id="resource-number">{{strelkovyCasualties | number: 0}}</h2>
-                    <h2>Casualties</h2></div>
+                    <h2>Fuel</h2>
+                </div>
             </div>
         </div>
         <div class="container">
@@ -45,8 +45,8 @@
                 <button id="btn-make-glory" class="btn btn-default btn-lg" ng-click="makeGlory()" ng-disabled="gloryTimer==true">Za Rodinu</button>
             </div>
             <div ng-show="makeGloryPressed">
-                <div class="alert alert-warning ng-hide" role="alert" ng-hide="gloryResult<5">You failed to obtain glory.</div>
-                <div class="alert alert-warning ng-hide" role="alert" ng-show="gloryResult<5">Glory Gained!</div>
+                <div class="alert ng-hide" role="alert" ng-hide="gloryResult<5">You failed to obtain glory.</div>
+                <div class="alert ng-hide" role="alert" ng-show="gloryResult<5">Glory Gained!</div>
             </div>
             <div class="progress">
                 <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="5" style="width: {{gloryTimerTime}}%;">
@@ -55,17 +55,18 @@
         </div>
         <section>
             <div class="container">
-                <h2>Headquarters</h2>
+                <h2 class="section-type">Headquarters</h2>
             </div>
             <div class="container">
                 <div class="row">
-                    <div class="col-md-3">
+                    <div class="col-md-6">
                         <img src="img/iconPartyLeader.png">
                     </div>
-                    <div class="col-md-9">
+                    <div class="col-md-6 right">
                         <h3>Party Leader</h3>
+                        <p>A soviet bloc party leader who rounds up and leads partisans to glory.</p>
                         <h4>Units: {{numPartyLeader}}</h4>
-                        <h4>Glory Rate: +.1/s | +{{numPartyLeader*.1 | number: 2}}/s total</h4>
+                        <h4>Glory Rate: +.5/s | +{{numPartyLeader*.5 | number: 2}}/s total</h4>
                         <h4>Supply Rate: +3/s | +{{numPartyLeader*3 | number: 2}}/s total</h4>
                         <button id="btn-hire-party-leader" class="btn btn-default" ng-click="hirePartyLeader()" ng-disabled="costPartyLeader > strelkovyGlory">{{costPartyLeader}} gl. - Deploy Headquarters Staff</button>
                     </div>
@@ -74,34 +75,53 @@
         </section>
         <section>
             <div class="container" ng-show="numPartyLeader >= 1">
-                <h2>Infantry</h2>
+                <h2 class="section-type">Infantry</h2>
             </div>
             <div class="container" ng-show="numPartyLeader >= 1">
-                <h3>Partisan</h3>
-                <p>A ragtag member of volunteers pulled from local villages to engage the enemy in guerilla warfare, usually small enough to remain relatively hidden among occupied territory.</p>
-                <div class="col-md-4">
-                    <h4>Units: {{numPartisan}}</h4>
+                <div class="row">
+                    <div class="col-md-6">
+                        <img src="img/iconSovietPartisans.png">
+                    </div>
+                    <div class="col-md-6 right">
+                        <h3>Partisan</h3>
+                        <p>A ragtag member of volunteers pulled from local villages to engage the enemy in guerilla warfare, usually small enough to remain relatively hidden among occupied territory.</p>
+                        <h4>Units: {{numPartisan}}</h4>
+                        <h4>Glory Rate: +{{rateGloryPartisan}}/s per unit | +{{numPartisan*rateGloryPartisan | number: 2}}/s total</h4>
+                        <h4>Supply Rate: {{rateSupplyPartisan}}/s per unit | -{{numPartisan*rateSupplyPartisan | number: 2}}/s total</h4>
+                        <button id="btn-hire-partisan" class="btn btn-default" ng-click="hirePartisan()" ng-disabled="costPartisan > strelkovyGlory">{{costPartisan}} gl. - Deploy Partisan</button>
+                    </div>
+                    <button id="btn-upgrade-partisan" class="btn btn-default btn-block" ng-click="upgradePartisan()" ng-disabled="costUpgradePartisan > strelkovyGlory" ng-show="numPartisan >= 10">{{costUpgradePartisan}} gl. - Upgrade Partisans</button>
                 </div>
-                <div class="col-md-4">
-                    <h4>Glory Rate: +.1/s per unit | +{{numPartisan*.1 | number: 2}}/s total</h4>
-                </div>
-                <div class="col-md-4">
-                    <h4>Supply Rate: -.1/s per unit | -{{numPartisan*.1 | number: 2}}/s total</h4>
-                </div>
-                <button id="btn-hire-partisan" class="btn btn-default" ng-click="hirePartisan()" ng-disabled="costPartisan > strelkovyGlory">{{costPartisan}} - Deploy Partisan</button>
             </div>
             <div class="container" ng-show="numPartisan >= 1">
-                <h3>Conscript</h3>
-                <div class="col-md-4">
-                    <h4>Units: {{numConscript}}</h4>
+                <div class="row">
+                    <div class="col-md-6">
+                        <img src="img/iconSovietConscript.png">
+                    </div>
+                    <div class="col-md-6 right">
+                        <h3>Conscript</h3>
+                        <p>During the Great Patriotic War all able-bodied men of ages 18–51 were subject to draft with the exception of specialists declared vitally necessary in industry.</p>
+                        <h4>Units: {{numConscript}}</h4>
+                        <h4>Glory Rate: +5/s per unit | +{{numConscript*5 | number: 2}}/s total</h4>
+                        <h4>Supply Rate: -.5/s per unit | -{{numConscript*.5 | number: 2}}/s total</h4>
+                        <button id="btn-hire-conscript" class="btn btn-default" ng-click="hireConscript()" ng-disabled="costConscript > strelkovyGlory">{{costConscript}} gl. - Deploy Conscript</button>
+                    </div>
                 </div>
-                <div class="col-md-4">
-                    <h4>Glory Rate: +.1/s per unit | +{{numConscript*.1 | number: 2}}/s total</h4>
+            </div>
+            <div class="container" ng-show="numConscript >= 1">
+                <div class="row">
+                    <div class="col-md-6">
+                        <img src="img/iconSovietSapper.png">
+                    </div>
+                    <div class="col-md-6 right">
+                        <h3>Sapper</h3>
+                        <p>Soviet Sappers were combat engineers to be feared, wearing steel body armor and wielding SMGs, they were at the forefront of assaulting fortified positions..</p>
+                        <h4>Units: {{numSapper}}</h4>
+                        <h4>Glory Rate: +5/s per unit | +{{numSapper*35 | number: 2}}/s total</h4>
+                        <h4>Supply Rate: -.5/s per unit | -{{numSapper*2 | number: 2}}/s total</h4>
+                        <button id="btn-hire-sapper" class="btn btn-default" ng-click="hireSapper()" ng-disabled="costSapper > strelkovyGlory">{{costSapper}} gl. - Deploy Sapper</button>
+                    </div>
                 </div>
-                <div class="col-md-4">
-                    <h4>Supply Rate: -.5/s per unit | -{{numConscript*.5 | number: 2}}/s total</h4>
-                </div>
-                <button id="btn-hire-mg34-grenadier" class="btn btn-default" ng-click="hireConscript()" ng-disabled="costConscript >= strelkovyGlory">{{costConscript}} - Deploy Conscript</button>
             </div>
         </section>
     </div>

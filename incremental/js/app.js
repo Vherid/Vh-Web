@@ -17,7 +17,7 @@
         // Units
         // Headquarters
         $scope.numPartyLeader = 0;
-        $scope.costPartyLeader = 3;
+        $scope.costPartyLeader = 1;
         $scope.hirePartyLeader = function() {
             $scope.numPartyLeader++;
             $scope.strelkovyGlory -= $scope.costPartyLeader;
@@ -41,6 +41,9 @@
         };
 
         //Infantry
+        $scope.rateGloryPartisan = 1;
+        $scope.rateSupplyPartisan = -.1;
+        $scope.upgradeNum = 10;
         $scope.numPartisan = 0;
         $scope.costPartisan = 10;
         $scope.hirePartisan = function() {
@@ -52,6 +55,11 @@
             $scope.costPartisan = Math.ceil($scope.costPartisan * 1.5);
         };
 
+        $scope.upgradePartisan = function() {
+            $scope.rateGloryPartisan += Math.ceil($scope.rateGloryPartisan*1.1);
+            $scope.costUpgradePartisan = Math.ceil($scope.costPartisan * 2);
+        }
+
         $scope.numConscript = 0;
         $scope.costConscript = 10;
         $scope.hireConscript = function() {
@@ -60,17 +68,28 @@
             $scope.costConscript = Math.ceil($scope.costConscript * 1.9);
         };
 
+        $scope.numSapper = 0;
+        $scope.costSapper = 50;
+        $scope.hireSapper = function() {
+            $scope.numSapper++;
+            $scope.strelkovyGlory -= $scope.costSapper;
+            $scope.costSapper = Math.ceil($scope.costSapper * 2);
+        };
+
 
         $interval(function() {
             // Grenadiers add 1 per second (1/100 every 10ms)
-            $scope.strelkovyGlory += ($scope.numPartyLeader * .1 / 100);
+            $scope.strelkovyGlory += ($scope.numPartyLeader * .5 / 100);
             $scope.strelkovySupplies += ($scope.numPartyLeader * 3 / 100);
 
-            $scope.strelkovyGlory += ($scope.numPartisan * 1 / 100);
-            $scope.strelkovySupplies -= ($scope.numPartisan * .1 / 100);
+            $scope.strelkovyGlory += ($scope.numPartisan * $scope.rateGloryPartisan / 100);
+            $scope.strelkovySupplies -= ($scope.numPartisan * $scope.rateSupplyPartisan / 100);
 
             $scope.strelkovyGlory += ($scope.numConscript * 5 / 100);
             $scope.strelkovySupplies -= ($scope.numConscript * .5 / 100);
+
+            $scope.strelkovyGlory += ($scope.numSapper * 35 / 100);
+            $scope.strelkovySupplies -= ($scope.numSapper * 2 / 100);
             // Start progressbar when prestige button is pushed
             if ($scope.gloryTimer === true) {
                 $scope.gloryTimerTime += (40 / 100);
