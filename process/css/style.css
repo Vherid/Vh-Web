@@ -89,3 +89,12 @@ section {
 h1 {
     margin-bottom: .25em;
 }
+
+a:link, a:visited, a:hover {
+    color: #FF5003;
+    text-decoration: none;
+}
+
+#knockedoutlink {
+    margin-bottom: 1em;
+}
