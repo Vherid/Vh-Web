@@ -1,0 +1,14 @@
+body {
+    padding-top: 70px;
+    background-color: #fff;
+}
+
+.wrapper-rules {}
+
+.article-rule {
+    border-bottom: 1px solid black;
+}
+
+.article-rule img {
+    margin-bottom: 1em;
+}
