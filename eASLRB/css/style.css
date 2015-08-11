@@ -1,12 +1,11 @@
 body {
     padding-top: 70px;
-    background-color: #fff;
 }
 
 .wrapper-rules {}
 
 .article-rule {
-    border-top: 1px solid black;
+    border-top: 1px solid #DF691A;
 }
 
 .article-rule img {
@@ -17,4 +16,9 @@ body {
     max-height: 30em;
     overflow: hidden;
     overflow-y: auto;
+}
+
+.bg-errata {
+    background-color: #eea16d;
+    padding-left: .3em;
 }
