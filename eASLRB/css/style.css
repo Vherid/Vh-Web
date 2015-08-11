@@ -6,9 +6,15 @@ body {
 .wrapper-rules {}
 
 .article-rule {
-    border-bottom: 1px solid black;
+    border-top: 1px solid black;
 }
 
 .article-rule img {
     margin-bottom: 1em;
+}
+
+.dropdown-menu {
+    max-height: 30em;
+    overflow: hidden;
+    overflow-y: auto;
 }
